@@ -1,0 +1,27 @@
+[
+	// Shift + Alt + Up & Down to increase & decrease size of current view.
+	{
+		"key": "shift+alt+up",
+		"command": "workbench.action.increaseViewSize"
+	},
+	{
+		"key": "shift+alt+down",
+		"command": "workbench.action.decreaseViewSize"
+	},
+	{
+		"key": "shift+alt+up",
+		"command": "-editor.action.copyLinesUpAction"
+	},
+	{
+		"key": "shift+alt+up",
+		"command": "-notebook.cell.copyUp"
+	},
+	{
+		"key": "shift+alt+down",
+		"command": "-editor.action.copyLinesDownAction"
+	},
+	{
+		"key": "shift+alt+down",
+		"command": "-notebook.cell.copyDown"
+	}
+]
