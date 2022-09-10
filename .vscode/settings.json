@@ -1,0 +1,23 @@
+{
+	// Text editor
+	"editor.insertSpaces": false,
+	"editor.fontFamily": "'Cascadia Mono', Consolas, monospace",
+	"editor.renderWhitespace": "all",
+	"workbench.editor.untitled.hint": "hidden",
+	"editor.rulers": [
+		100,
+		120,
+	],
+
+	// Minimap
+	"editor.minimap.renderCharacters": false,
+	"editor.minimap.showSlider": "always",
+
+	// Shell
+	"workbench.sideBar.location": "right",
+	"workbench.tree.renderIndentGuides": "always",
+	"workbench.tree.indent": 18,
+
+	// PowerShell
+	"powershell.integratedConsole.showOnStartup": false,
+}
