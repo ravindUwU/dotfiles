@@ -1,2 +1,4 @@
-#IfWinActive ahk_exe firefox.exe
+#HotIf WinActive("ahk_exe firefox.exe")
 ^+w::
+{
+}
