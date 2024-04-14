@@ -1,5 +1,7 @@
 ; Tilde (`) keystroke prefixed hotstrings that expand to characters that aren't directly typeable.
 
+#SingleInstance
+
 ; Dashes
 :*?:``en::{U+0x2013} ; –
 :*?:``em::{U+0x2014} ; —
