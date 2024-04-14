@@ -6,3 +6,7 @@ indent_style = tab
 insert_final_newline = true
 trim_trailing_whitespace = true
 guidelines = 100
+
+[*.cs]
+csharp_using_directive_placement = inside_namespace:warning
+csharp_style_namespace_declarations = file_scoped:warning
