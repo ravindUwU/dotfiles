@@ -2,7 +2,6 @@ function Set-DotfilesAliases {
 
 	$aliases = @{
 		'gh' = 'Get-Help'
-		'x' = 'explorer.exe'
 	}
 
 	foreach ($a in $aliases.GetEnumerator()) {
