@@ -34,4 +34,4 @@ function x {
 	}
 }
 
-Invoke-Command { Export-DotfilesFunction 'x' } 2>&1 | Out-Null
+& ((Get-Command 'Export-DotfilesFunction' -ErrorAction Ignore) ?? {}) 'x'

@@ -8,4 +8,4 @@ function cdv {
 	Set-Location $path
 }
 
-Invoke-Command { Export-DotfilesFunction 'cdv' } 2>&1 | Out-Null
+& ((Get-Command 'Export-DotfilesFunction' -ErrorAction Ignore) ?? {}) 'cdv'

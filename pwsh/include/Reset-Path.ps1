@@ -9,4 +9,4 @@ function Reset-Path {
 		+ [System.Environment]::GetEnvironmentVariable('PATH', 'User')
 }
 
-Invoke-Command { Export-DotfilesFunction 'Reset-Path' } 2>&1 | Out-Null
+& ((Get-Command 'Export-DotfilesFunction' -ErrorAction Ignore) ?? {}) 'Reset-Path'

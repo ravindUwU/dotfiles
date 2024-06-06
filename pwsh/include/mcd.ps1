@@ -15,4 +15,4 @@ function mcd {
 	Set-Location $Name
 }
 
-Invoke-Command { Export-DotfilesFunction 'mcd' } 2>&1 | Out-Null
+& ((Get-Command 'Export-DotfilesFunction' -ErrorAction Ignore) ?? {}) 'mcd'

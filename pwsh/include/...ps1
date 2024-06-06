@@ -18,4 +18,4 @@ function .. {
 	Set-Location (@('..') * $n -join '/')
 }
 
-Invoke-Command { Export-DotfilesFunction '..' } 2>&1 | Out-Null
+& ((Get-Command 'Export-DotfilesFunction' -ErrorAction Ignore) ?? {}) '..'

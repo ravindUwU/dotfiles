@@ -49,4 +49,4 @@ function cdp {
 	}
 }
 
-Invoke-Command { Export-DotfilesFunction 'cdp' } 2>&1 | Out-Null
+& ((Get-Command 'Export-DotfilesFunction' -ErrorAction Ignore) ?? {}) 'cdp'

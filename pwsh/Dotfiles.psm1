@@ -9,7 +9,7 @@ param (
 	Registers a function name to be exported by the Dotfiles module.
 
 	Conditionally invoke as,
-		Invoke-Command { Export-DotfilesFunction '<name>' } 2>&1 | Out-Null
+		& ((Get-Command 'Export-DotfilesFunction' -ErrorAction Ignore) ?? {}) '<name>'
 #>
 function Export-DotfilesFunction {
 	param (
