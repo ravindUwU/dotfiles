@@ -17,8 +17,10 @@ function cdp {
 		$config = . "$HOME/Dotfiles.Cdp.Projects.ps1"
 	}
 
+	Set-Location "$HOME/Projects"
+
 	# Make list of projects
-	$projects = Get-ChildItem "$HOME/Projects" -Directory | ForEach-Object {
+	$projects = Get-ChildItem -Directory | ForEach-Object {
 
 		# Yield project
 		$projectName = $_.Name
