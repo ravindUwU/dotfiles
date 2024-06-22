@@ -1,5 +1,9 @@
 function wtsh {
-	wt sp -H -d .
+	param (
+		[string] $dir = '.'
+	)
+
+	wt sp -H -d (Resolve-Path $dir).Path
 }
 
 & ((Get-Command 'Export-DotfilesFunction' -ErrorAction Ignore) ?? {}) 'wtsh'
