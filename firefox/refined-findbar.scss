@@ -1,0 +1,20 @@
+// My https://github.com/ravindUwU/firefox-refined-findbar/ config :3
+
+@include refined-findbar(
+	$float: true,
+	$float-alignment: top,
+	$float-distance: 18px,
+
+	$buttons: true,
+	$buttons-grouped: true,
+
+	$order: (
+		LABELS,
+		DESCRIPTION,
+		TEXT_BOX,
+		CHECKBOX_HIGHLIGHT_ALL,
+		CHECKBOX_MATCH_CASE,
+		CHECKBOX_MATCH_DIACRITICS,
+		CHECKBOX_WHOLE_WORDS,
+	)
+);
