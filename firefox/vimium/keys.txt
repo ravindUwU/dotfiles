@@ -1,0 +1,40 @@
+unmapAll
+
+map ? showHelp
+
+# Tabs
+map Dd duplicateTab
+map Dw moveTabToNewWindow
+
+# URL
+map g/ goToRoot
+map gu goUp
+
+# Link hints
+map q LinkHints.activateMode
+map Q LinkHints.activateModeToOpenInNewTab
+map w LinkHints.activateModeToCopyLinkUrl
+map W LinkHints.activateModeToOpenIncognito
+map f LinkHints.activateMode action=focus
+
+# Vertical navigation
+map j scrollDown
+map k scrollUp
+map J scrollPageDown
+map K scrollPageUp
+
+# Go ...
+map gt scrollToTop
+map gb scrollToBottom
+map gn goNext
+map gp goPrevious
+
+# Horizontal navigation
+map h scrollLeft
+map l scrollRight
+map H scrollToLeft
+map L scrollToRight
+
+# Marks
+map ~ Marks.activateCreateMode
+map ` Marks.activateGotoMode

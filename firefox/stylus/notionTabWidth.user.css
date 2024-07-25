@@ -1,0 +1,14 @@
+/* ==UserStyle==
+@name notionTabWidth
+@version 1.0.0
+@description Change the tab width of Notion code blocks.
+@namespace github.com/ravindUwU/dotfiles
+@updateURL https://raw.githubusercontent.com/ravindUwU/dotfiles/main/firefox/stylus/notionTabWidth.user.css
+@var number dotfilesTabWidth "Tab width" 4
+==/UserStyle== */
+
+@-moz-document domain("notion.so") {
+	.notion-code-block * {
+		tab-size: var(--dotfilesTabWidth);
+	}
+}

@@ -1,0 +1,17 @@
+# uBlacklist removes search results that match patterns.
+# https://iorate.github.io/ublacklist/docs
+#
+# Install uBlacklist, open settings, configure:
+#   - Add rules blocking whole sites by default: true
+#   - Subscribe add the following ruleset URLs:
+#     - https://raw.githubusercontent.com/ravindUwU/dotfiles/main/firefox/ublacklist/filters.txt
+#     - https://raw.githubusercontent.com/laylavish/uBlockOrigin-HUGE-AI-Blocklist/main/list_uBlacklist.txt
+
+*://*.linkedin.com/*
+*://*.news.com.au/*
+*://*.tutorialspoint.com/*
+*://*.w3schools.com/*
+*://*.geeksforgeeks.org/*
+*://*.9gag.com/*
+*://*.january.ai/*
+*://*.coursehero.com/*
