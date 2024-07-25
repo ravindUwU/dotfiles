@@ -1,8 +1,68 @@
 {
+	// #region Dotfiles repo settings
+
 	"files.exclude": {
 		"cs/**/.vs/": true,
 		"cs/**/obj/": true,
 		"cs/**/bin/": true,
 		"cs/.published/": true,
-	}
+	},
+
+	// #endregion
+
+	// #region Dotfiles user settings
+
+	// Window title
+	"workbench.layoutControl.enabled": false,
+	"window.commandCenter": false,
+	"window.title": "${dirty}${activeEditorShort}${separator}${rootName}${separator}${activeRepositoryBranchName}",
+
+	// Colour
+	"window.autoDetectColorScheme": true,
+
+	// Workbench
+	"workbench.sideBar.location": "right",
+	"workbench.activityBar.location": "top",
+	"workbench.reduceMotion": "on",
+	"workbench.localHistory.enabled": false,
+	"breadcrumbs.enabled": false,
+
+	// File Tree
+	"workbench.tree.indent": 18,
+	"workbench.tree.enableStickyScroll": true,
+
+	// Editor
+	"workbench.editor.empty.hint": "hidden",
+	"editor.renderWhitespace": "all",
+	"editor.insertSpaces": false,
+	"editor.dragAndDrop": false,
+	"editor.rulers": [100],
+	"editor.fontFamily": "'Cascadia Code', 'Consolas', monospace",
+	"editor.codeLens": false,
+	"editor.stickyScroll.enabled": false,
+
+	"files.trimTrailingWhitespace": true,
+	"files.insertFinalNewline": true,
+	"files.associations": {
+	  "*.json": "jsonc",
+	},
+
+	// Minimap
+	"editor.minimap.renderCharacters": false,
+	"editor.minimap.showSlider": "always",
+
+	// Remote
+	"remote.autoForwardPorts": false,
+	"remote.forwardOnOpen": false,
+
+	// Colour highlight extension
+	"color-highlight.markRuler": false,
+
+	// draw.io extension
+	"hediet.vscode-drawio.theme": "atlas",
+
+	// Redhat extensions (XML)
+	"redhat.telemetry.enabled": false,
+
+	// #endregion
 }
