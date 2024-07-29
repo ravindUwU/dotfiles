@@ -2,6 +2,8 @@ unmapAll
 
 map ? showHelp
 
+map i enterInsertMode
+
 # Tabs
 map Dd duplicateTab
 map Dw moveTabToNewWindow
