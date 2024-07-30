@@ -28,6 +28,7 @@ function cdp {
 		[PSCustomObject]@{
 			Name = $projectName
 			Path = $projectPath
+			ParentName = $null
 		}
 
 		# Yield subprojects
@@ -37,6 +38,7 @@ function cdp {
 			[PSCustomObject]@{
 				Name = $subprojectName
 				Path = $subprojectPath
+				ParentName = $projectName
 			}
 		}
 	}
@@ -47,6 +49,7 @@ function cdp {
 	# Find selected project & cd into it
 	$project = $projects | Where-Object Name -eq $selection | Select-Object -First 1
 	if ($null -ne $project) {
+		[System.Console]::Title = $project.ParentName ?? $project.Name
 		Set-Location $project.Path
 	}
 }
