@@ -49,11 +49,10 @@ stackexchange.com###announcement-banner:has-text('OverflowAI')
 stackoverflow.com###sidebar .s-sidebarwidget--item:has-text(/OverflowAI|OpenAI/)
 stackoverflow.com##.js-overflowai-cta
 
-! Super User AI slop
+! Stack Exchange AI slop
 superuser.com##.js-overflowai-cta
-
-! Meta Stack Exchange AI slop
 meta.stackexchange.com##.js-overflowai-cta
+quant.stackexchange.com##.js-overflowai-cta
 
 ! GitHub symbol search
 github.com###symbols-pane:upward(1)
