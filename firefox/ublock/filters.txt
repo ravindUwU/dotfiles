@@ -54,6 +54,7 @@ github.com###symbols-pane:upward(1)
 
 ! GitHub AI slop
 github.blog##.blog-header a:has-text('GitHub Copilot')
+github.com##.feed-right-sidebar a[href="/marketplace/models"]:upward(.js-notice)
 
 ! Microsoft AI slop
 learn.microsoft.com###banner-holder *[class*="banner"]:has-text(/([^\w]AI[^\w])|([Aa]rtificial [Ii]ntelligence)/)
