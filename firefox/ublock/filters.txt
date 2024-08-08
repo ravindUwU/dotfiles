@@ -41,18 +41,13 @@ stackoverflow.com###hot-network-questions
 stackoverflow.com##.js-freemium-cta
 stackoverflow.com##newsletter-ad
 
-! Stack Overflow AI slop
-stackoverflow.com##.s-navigation li:has-text('OverflowAI')
-stackoverflow.com###announcement-banner:has-text('OverflowAI')
-stackexchange.com##.s-navigation li:has-text('OverflowAI')
-stackexchange.com###announcement-banner:has-text('OverflowAI')
-stackoverflow.com###sidebar .s-sidebarwidget--item:has-text(/OverflowAI|OpenAI/)
-stackoverflow.com##.js-overflowai-cta
-
 ! Stack Exchange AI slop
-superuser.com##.js-overflowai-cta
-meta.stackexchange.com##.js-overflowai-cta
-quant.stackexchange.com##.js-overflowai-cta
+stackoverflow.com,stackexchange.com,superuser.com##.s-navigation li:has-text('OverflowAI')
+stackoverflow.com,stackexchange.com,superuser.com###announcement-banner:has-text('OverflowAI')
+stackoverflow.com,stackexchange.com,superuser.com##.s-navigation li:has-text('OverflowAI')
+stackoverflow.com,stackexchange.com,superuser.com###announcement-banner:has-text('OverflowAI')
+stackoverflow.com,stackexchange.com,superuser.com###sidebar .s-sidebarwidget--item:has-text(/OverflowAI|OpenAI/)
+stackoverflow.com,stackexchange.com,superuser.com##.js-overflowai-cta
 
 ! GitHub symbol search
 github.com###symbols-pane:upward(1)
