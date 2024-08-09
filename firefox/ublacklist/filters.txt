@@ -8,10 +8,21 @@
 #     - https://raw.githubusercontent.com/laylavish/uBlockOrigin-HUGE-AI-Blocklist/main/list_uBlacklist.txt
 
 *://*.linkedin.com/*
-*://*.news.com.au/*
 *://*.tutorialspoint.com/*
 *://*.w3schools.com/*
 *://*.geeksforgeeks.org/*
 *://*.9gag.com/*
 *://*.january.ai/*
 *://*.coursehero.com/*
+
+# News corp, murdoch media and other shamelessly biased/conservative/generally shit news sites
+*://*.news.com.au/*
+*://*.theaustralian.com.au/*
+*://*.dailytelegraph.com.au/*
+*://*.heraldsun.com.au/*
+*://*.couriermail.com.au/*
+*://*.adelaidenow.com.au/*
+*://*.themercury.com.au/*
+*://*.ntnews.com.au/*
+*://*.nypost.com/*
+*://*.foxnews.com/*
