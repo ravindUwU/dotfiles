@@ -8,6 +8,7 @@
 #     - https://raw.githubusercontent.com/laylavish/uBlockOrigin-HUGE-AI-Blocklist/main/list_uBlacklist.txt
 
 *://*.linkedin.com/*
+*://*.quora.com/*
 *://*.tutorialspoint.com/*
 *://*.w3schools.com/*
 *://*.geeksforgeeks.org/*
@@ -26,3 +27,5 @@
 *://*.ntnews.com.au/*
 *://*.nypost.com/*
 *://*.foxnews.com/*
+*://*.nytimes.com/*
+*://*.washingtonpost.com/*
