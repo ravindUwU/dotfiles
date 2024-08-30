@@ -49,9 +49,6 @@ stackoverflow.com,stackexchange.com,superuser.com###announcement-banner:has-text
 stackoverflow.com,stackexchange.com,superuser.com###sidebar .s-sidebarwidget--item:has-text(/OverflowAI|OpenAI/)
 stackoverflow.com,stackexchange.com,superuser.com##.js-overflowai-cta
 
-! GitHub symbol search
-github.com###symbols-pane:upward(1)
-
 ! GitHub AI slop
 github.blog##.blog-header a:has-text('GitHub Copilot')
 github.com##.feed-right-sidebar a[href="/marketplace/models"]:upward(.js-notice)
