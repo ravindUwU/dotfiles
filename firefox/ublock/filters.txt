@@ -53,6 +53,9 @@ stackoverflow.com,stackexchange.com,superuser.com##.js-overflowai-cta
 
 ! GitHub AI slop
 github.blog##.blog-header a:has-text('GitHub Copilot')
+github.blog##header a:has-text(Copilot)
+github.blog##header nav li > a:has-text(AI & ML):upward(li)
+github.blog##main .post-columns article:has-text(/Copilot|[^\w]AI[^\w]/)
 github.com##.feed-right-sidebar a[href="/marketplace/models"]:upward(.js-notice)
 github.com##[aria-label="User navigation"]:upward(1) ul li a[href="/github-copilot/signup"]:upward(li)
 github.com##.dashboard-changelog ul li:has-text('Copilot')
