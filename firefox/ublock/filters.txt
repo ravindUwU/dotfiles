@@ -11,11 +11,13 @@ twitter.com##a[href="/i/verified-choose"]
 twitter.com##a[href="/i/verified-orgs-signup"]
 twitter.com##a[href="/i/premium_sign_up"]
 twitter.com##aside:has-text('Subscribe to Premium')
+twitter.com##a[href="/jobs"]
 x.com##aside[aria-label="Get Verified"][role="complementary"]:upward(div)
 x.com##a[href="/i/verified-choose"]
 x.com##a[href="/i/verified-orgs-signup"]
 x.com##a[href="/i/premium_sign_up"]
 x.com##aside:has-text('Subscribe to Premium')
+x.com##a[href="/jobs"]
 
 ! Twitter events
 twitter.com##[data-testid="eventHero"][role="link"]
