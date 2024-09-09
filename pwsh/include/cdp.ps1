@@ -40,8 +40,10 @@
 #>
 function cdp {
 	# Load config
-	if (Test-Path "$HOME/Dotfiles.Cdp.Projects.ps1") {
-		$config = . "$HOME/Dotfiles.Cdp.Projects.ps1"
+	$config = if (Test-Path "$HOME/Dotfiles.Cdp.Projects.ps1")  {
+		. "$HOME/Dotfiles.Cdp.Projects.ps1"
+	} else {
+		@{}
 	}
 
 	Set-Location "$HOME/Projects"
