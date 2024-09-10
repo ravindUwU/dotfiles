@@ -46,31 +46,38 @@ function cdp {
 		@{}
 	}
 
-	Set-Location "$HOME/Projects"
+	$projectRoot = "$HOME/Projects"
 
 	# Make list of projects
-	$projects = Get-ChildItem -Directory | ForEach-Object {
-
-		# Yield project
-		$projectName = $_.Name
-		$projectPath = $_.FullName
+	$projects = @(
 		[PSCustomObject]@{
-			Name = $projectName
-			Path = $projectPath
+			Name = "/"
+			Path = $projectRoot
 			ParentName = $null
 		}
 
-		# Yield subprojects
-		($config[$_.Name].Subprojects ?? @()) | ForEach-Object {
-			$subprojectName = "$projectName/$_"
-			$subprojectPath = Join-Path $projectPath $_
+		Get-ChildItem $projectRoot -Directory | ForEach-Object {
+			# Yield project
+			$projectName = $_.Name
+			$projectPath = $_.FullName
 			[PSCustomObject]@{
-				Name = $subprojectName
-				Path = $subprojectPath
-				ParentName = $projectName
+				Name = $projectName
+				Path = $projectPath
+				ParentName = $null
+			}
+
+			# Yield subprojects
+			($config[$_.Name].Subprojects ?? @()) | ForEach-Object {
+				$subprojectName = "$projectName/$_"
+				$subprojectPath = Join-Path $projectPath $_
+				[PSCustomObject]@{
+					Name = $subprojectName
+					Path = $subprojectPath
+					ParentName = $projectName
+				}
 			}
 		}
-	}
+	)
 
 	# Prompt for selection using fzf
 	$selection = $projects | ForEach-Object { $_.Name } | `
