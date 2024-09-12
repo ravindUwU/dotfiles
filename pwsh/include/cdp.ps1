@@ -86,8 +86,11 @@ function cdp {
 	# Find selected project & cd into it
 	$project = $projects | Where-Object Name -eq $selection | Select-Object -First 1
 	if ($null -ne $project) {
-		[System.Console]::Title = $project.ParentName ?? $project.Name
 		Set-Location $project.Path
+
+		if ('/' -ne $project.Name) {
+			[System.Console]::Title = $project.ParentName ?? $project.Name
+		}
 	}
 }
 
