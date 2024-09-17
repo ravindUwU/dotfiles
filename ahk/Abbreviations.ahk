@@ -42,3 +42,10 @@
 :*?:``sup7::{U+0x2077} ; ⁷
 :*?:``sup8::{U+0x2078} ; ⁸
 :*?:``sup9::{U+0x2079} ; ⁹
+
+; 22, A Million - Bon Iver
+:*?:``soon::S∞∞N
+:*?:``deathbreast::d E A T h b R E a s T ⊠ ⊠
+:*?:``creek::CRΣΣK
+:*?:``moon::M♢♢N
+:*?:``45::____45_____
