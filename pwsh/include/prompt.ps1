@@ -4,6 +4,9 @@ function Install-DotfilesPrompt {
 	${Global:Dotfiles.Prompt.Old} | Out-Null # suppress PSUseDeclaredVarsMoreThanAssignments
 
 	Set-Content -Path 'Function:\prompt' -Value {
+		# Write time
+		Write-Host "$([datetime]::Now.ToString('hh:mm:sst').ToLower()) " -NoNewline -ForegroundColor DarkGray
+
 		# Warn if elevated session
 		# https://superuser.com/a/756696
 		if (
