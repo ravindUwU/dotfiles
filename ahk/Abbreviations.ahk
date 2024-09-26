@@ -31,6 +31,7 @@
 :*?:``copy::{U+0x00A9} ; ©
 :*?:``deg::{U+0x00B0} ; °
 :*?:``kbd::<kbd></kbd>{Left 6}
+:*?:``tm::{U+0x2122} ; ™
 
 ; Superscript numbers
 :*?:``sup0::{U+0x2070} ; ⁰
