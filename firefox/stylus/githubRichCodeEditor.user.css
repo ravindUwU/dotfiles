@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name githubRichCodeEditor
-@version 3.0.0
+@version 4.0.0
 @description Various refinements to GitHub's rich code editor.
 @namespace github.com/ravindUwU/dotfiles
 @updateURL https://raw.githubusercontent.com/ravindUwU/dotfiles/main/firefox/stylus/githubRichCodeEditor.user.css
@@ -17,7 +17,32 @@
 		}
 	}
 
-	/* Hide editor symbols pane */
+	/*
+		Hide editor symbols pane
+
+		<div>
+			<div> ← Remove the right margin from this
+				<div#repos-sticky-header></div>
+
+				(code view here)
+			</div>
+
+			<div></div> ← Hide this
+
+			<div> ← Hide this
+				<div#symbols-pane></div>
+			</div>
+		</div>
+	*/
+
+	div:has(> #repos-sticky-header) {
+		margin-right: 0;
+	}
+
+	div:has(> #repos-sticky-header) + div {
+		display: none;
+	}
+
 	div:has(> #symbols-pane) {
 		display: none;
 	}
