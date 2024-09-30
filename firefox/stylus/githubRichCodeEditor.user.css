@@ -8,7 +8,7 @@
 
 @-moz-document domain("github.com") {
 
-	/* Highlighted active tokens are distacting. Force transparent background */
+	/* Highlighted active tokens are distracting. Force transparent background */
 	react-app[app-name="react-code-view"] {
 		& .react-code-file-contents {
 			& span {
