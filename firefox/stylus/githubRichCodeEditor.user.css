@@ -1,10 +1,12 @@
 /* ==UserStyle==
 @name githubRichCodeEditor
 @version 4.0.0
-@description Various refinements to GitHub's rich code editor.
+@description Various refinements to GitHub's "rich" code editor.
 @namespace github.com/ravindUwU/dotfiles
 @updateURL https://raw.githubusercontent.com/ravindUwU/dotfiles/main/firefox/stylus/githubRichCodeEditor.user.css
 ==/UserStyle== */
+
+/* https://github.com/orgs/community/discussions/55261#discussioncomment-10493443 */
 
 @-moz-document domain("github.com") {
 
