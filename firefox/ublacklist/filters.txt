@@ -18,6 +18,10 @@
 *://*.toptal.com/*
 *://*.codepen.io/*
 
+# Twitter
+*://*.twitter.com/*
+*://*.x.com/*
+
 # News corp, murdoch media and other shamelessly biased/conservative/generally shit news sites
 *://*.news.com.au/*
 *://*.theaustralian.com.au/*
