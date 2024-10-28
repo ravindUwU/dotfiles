@@ -51,3 +51,6 @@
 :*?:``creek::CRΣΣK
 :*?:``moon::M♢♢N
 :*?:``45::____45_____
+
+; JS Promise
+:*?C:Promsie::Promise
