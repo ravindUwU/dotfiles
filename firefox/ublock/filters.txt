@@ -48,8 +48,6 @@ stackoverflow.com##newsletter-ad
 ! Stack Exchange AI slop
 stackoverflow.com,stackexchange.com,superuser.com##.s-navigation li:has-text('OverflowAI')
 stackoverflow.com,stackexchange.com,superuser.com###announcement-banner:has-text('OverflowAI')
-stackoverflow.com,stackexchange.com,superuser.com##.s-navigation li:has-text('OverflowAI')
-stackoverflow.com,stackexchange.com,superuser.com###announcement-banner:has-text('OverflowAI')
 stackoverflow.com,stackexchange.com,superuser.com###sidebar .s-sidebarwidget--item:has-text(/OverflowAI|OpenAI|([^\w]AI[^\w\-])/)
 stackoverflow.com,stackexchange.com,superuser.com##.js-overflowai-cta
 
