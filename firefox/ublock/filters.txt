@@ -64,3 +64,8 @@ github.com##.dashboard-changelog ul li:has-text('Copilot')
 
 ! Microsoft AI slop
 learn.microsoft.com###banner-holder *[class*="banner"]:has-text(/([^\w]AI[^\w])|([Aa]rtificial [Ii]ntelligence)/)
+
+! YouTube shorts
+www.youtube.com##tp-yt-app-drawer yt-formatted-string:has-text(Shorts):upward(ytd-guide-entry-renderer)
+www.youtube.com##span.ytd-reel-shelf-renderer:has-text(Shorts):upward(ytd-reel-shelf-renderer)
+www.youtube.com##ytd-rich-shelf-renderer span:has-text(Primetime movies for you):upward(ytd-rich-shelf-renderer)
