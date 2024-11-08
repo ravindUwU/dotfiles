@@ -50,7 +50,7 @@ stackoverflow.com,stackexchange.com,superuser.com##.s-navigation li:has-text('Ov
 stackoverflow.com,stackexchange.com,superuser.com###announcement-banner:has-text('OverflowAI')
 stackoverflow.com,stackexchange.com,superuser.com##.s-navigation li:has-text('OverflowAI')
 stackoverflow.com,stackexchange.com,superuser.com###announcement-banner:has-text('OverflowAI')
-stackoverflow.com,stackexchange.com,superuser.com###sidebar .s-sidebarwidget--item:has-text(/OverflowAI|OpenAI/)
+stackoverflow.com,stackexchange.com,superuser.com###sidebar .s-sidebarwidget--item:has-text(/OverflowAI|OpenAI|([^\w]AI[^\w\-])/)
 stackoverflow.com,stackexchange.com,superuser.com##.js-overflowai-cta
 
 ! GitHub AI slop
@@ -64,6 +64,12 @@ github.com##.dashboard-changelog ul li:has-text('Copilot')
 
 ! Microsoft AI slop
 learn.microsoft.com###banner-holder *[class*="banner"]:has-text(/([^\w]AI[^\w])|([Aa]rtificial [Ii]ntelligence)/)
+ignite.microsoft.com##.session-block__title:has-text(/([Gg]enA[Ii])|(AI[^\w])|([^\w]AI)|([Cc]opilot)|([Oo]penA[Ii])/):upward(.session-block)
+outlook.live.com###RibbonRoot div[role="group"][aria-label="Copilot"]
+
+! Miscellaneous web AI slop
+zed.dev##main > a[href="/ai"]
+stackblitz.com##span[class^="OpenInBold"]:has-text(Open in bolt.new | AI):upward(button):upward(div)
 
 ! YouTube shorts
 www.youtube.com##tp-yt-app-drawer yt-formatted-string:has-text(Shorts):upward(ytd-guide-entry-renderer)
