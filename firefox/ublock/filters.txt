@@ -73,3 +73,4 @@ stackblitz.com##span[class^="OpenInBold"]:has-text(Open in bolt.new | AI):upward
 www.youtube.com##tp-yt-app-drawer yt-formatted-string:has-text(Shorts):upward(ytd-guide-entry-renderer)
 www.youtube.com##span.ytd-reel-shelf-renderer:has-text(Shorts):upward(ytd-reel-shelf-renderer)
 www.youtube.com##ytd-rich-shelf-renderer span:has-text(Primetime movies for you):upward(ytd-rich-shelf-renderer)
+www.youtube.com##ytd-rich-shelf-renderer #title-text:has-text(Shorts):upward(ytd-rich-shelf-renderer)
