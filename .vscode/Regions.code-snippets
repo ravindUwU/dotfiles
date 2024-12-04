@@ -1,0 +1,16 @@
+{
+	"Start #region": {
+		"scope": "javascript, typescript, javascripreact, typescriptreact",
+		"prefix": "regs",
+		"body": [
+			"// #region $0"
+		]
+	},
+	"End #region": {
+		"scope": "javascript, typescript, javascripreact, typescriptreact",
+		"prefix": "rege",
+		"body": [
+			"// #endregion"
+		]
+	}
+}

@@ -1,0 +1,23 @@
+{
+	"UwU: JS/TS/C# Comment": {
+		"scope": "javascript, typescript, csharp",
+		"prefix": "uwuc",
+		"body": [
+			"// UwU: TODO: $0"
+		]
+	},
+	"UwU: JS/TS Log": {
+		"scope": "javascript, javascriptreact, typescript, typescriptreact",
+		"prefix": "uwuu",
+		"body": [
+			"console.log('<UwU>', '$0')"
+		]
+	},
+	"UwU: C# Log": {
+		"scope": "csharp",
+		"prefix": "uwuu",
+		"body": [
+			"Console.WriteLine($\"<UwU> $0\")"
+		]
+	},
+}
