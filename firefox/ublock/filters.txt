@@ -35,6 +35,9 @@ x.com##a[href="/i/grok"]
 accounts.google.com/gsi/*
 ##iframe[src^="https://accounts.google.com/gsi/iframe"]
 
+! Google AI slop
+www.google.com##h1:has-text(/AI Overview/i):upward(div[jscontroller])
+
 ! MDN AI slop
 developer.mozilla.org##.menu-link.top-level-entry:has-text('AI Help')
 developer.mozilla.org##.top-banner:has-text('AI Help')
