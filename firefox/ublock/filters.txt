@@ -72,8 +72,9 @@ outlook.live.com###RibbonRoot div[role="group"][aria-label="Copilot"]
 zed.dev##main > a[href="/ai"]
 stackblitz.com##span[class^="OpenInBold"]:has-text(Open in bolt.new | AI):upward(button):upward(div)
 
-! YouTube shorts
+! YouTube shorts, "playables", etc.
 www.youtube.com##tp-yt-app-drawer yt-formatted-string:has-text(Shorts):upward(ytd-guide-entry-renderer)
 www.youtube.com##span.ytd-reel-shelf-renderer:has-text(Shorts):upward(ytd-reel-shelf-renderer)
 www.youtube.com##ytd-rich-shelf-renderer span:has-text(Primetime movies for you):upward(ytd-rich-shelf-renderer)
 www.youtube.com##ytd-rich-shelf-renderer #title-text:has-text(Shorts):upward(ytd-rich-shelf-renderer)
+www.youtube.com##ytd-rich-shelf-renderer span:has-text(Playables):upward(ytd-rich-shelf-renderer)
