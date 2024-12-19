@@ -62,6 +62,9 @@ github.blog##main .post-columns article:has-text(/Copilot|[^\w]AI[^\w]/)
 github.com##.feed-right-sidebar a[href="/marketplace/models"]:upward(.js-notice)
 github.com##[aria-label="User navigation"]:upward(1) ul li a[href="/github-copilot/signup"]:upward(li)
 github.com##.dashboard-changelog ul li:has-text('Copilot')
+github.com##.AppHeader-CopilotChat
+github.com##copilot-dashboard-entrypoint
+github.com##span.ActionListItem-label:has-text(Copilot):upward(.ActionListItem)
 
 ! Microsoft AI slop
 learn.microsoft.com###banner-holder *[class*="banner"]:has-text(/([^\w]AI[^\w])|([Aa]rtificial [Ii]ntelligence)/)
