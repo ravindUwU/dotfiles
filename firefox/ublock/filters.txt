@@ -65,6 +65,7 @@ github.com##.dashboard-changelog ul li:has-text('Copilot')
 github.com##.AppHeader-CopilotChat
 github.com##copilot-dashboard-entrypoint
 github.com##span.ActionListItem-label:has-text(Copilot):upward(.ActionListItem)
+github.com##ul a[href="/settings/copilot"]:upward(li)
 
 ! Microsoft AI slop
 learn.microsoft.com###banner-holder *[class*="banner"]:has-text(/([^\w]AI[^\w])|([Aa]rtificial [Ii]ntelligence)/)
