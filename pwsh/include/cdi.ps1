@@ -7,12 +7,12 @@ function cdi {
 		[string] $dir = '.'
 	)
 
-	Set-Location $dir
+	cd $dir
 
 	$selection = Get-ChildItem -Directory | ForEach-Object { $_.Name } | fzf --height '30%' --layout reverse
 
 	if (-not ($null -eq $selection)) {
-		Set-Location $selection
+		cd $selection
 	}
 }
 

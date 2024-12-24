@@ -12,7 +12,7 @@ function mcd {
 	)
 
 	New-Item $Name -ItemType Directory -ErrorAction Stop | Out-Null
-	Set-Location $Name
+	cd $Name
 }
 
 & ((Get-Command 'Export-DotfilesFunction' -ErrorAction Ignore) ?? {}) 'mcd'

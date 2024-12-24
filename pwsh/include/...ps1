@@ -15,7 +15,7 @@ function .. {
 		[int] $n = 1
 	)
 
-	Set-Location (@('..') * $n -join '/')
+	cd (@('..') * $n -join '/')
 }
 
 & ((Get-Command 'Export-DotfilesFunction' -ErrorAction Ignore) ?? {}) '..'

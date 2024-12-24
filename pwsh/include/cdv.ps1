@@ -5,7 +5,7 @@ function cdv {
 		$path = Join-Path $path '..' -Resolve
 	}
 
-	Set-Location $path
+	cd $path
 }
 
 & ((Get-Command 'Export-DotfilesFunction' -ErrorAction Ignore) ?? {}) 'cdv'
