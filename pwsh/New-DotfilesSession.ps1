@@ -10,7 +10,7 @@ param (
 
 $init = {
 	# Override prompt label
-	${Global:Dotfiles.Prompt.Label} = 'DOTFILES'
+	${global:Dotfiles.Prompt.Label} = 'DOTFILES'
 
 	# Import module
 	Import-Module '.\Dotfiles.psm1' -ArgumentList @{ 'InstallPrompt' = $true }

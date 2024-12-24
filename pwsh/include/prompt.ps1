@@ -1,7 +1,7 @@
 function Install-DotfilesPrompt {
 
-	${Global:Dotfiles.Prompt.Old} = Get-Content -Path 'Function:\prompt' -ErrorAction Ignore
-	${Global:Dotfiles.Prompt.Old} | Out-Null # suppress PSUseDeclaredVarsMoreThanAssignments
+	${global:Dotfiles.Prompt.Old} = Get-Content -Path 'Function:\prompt' -ErrorAction Ignore
+	${global:Dotfiles.Prompt.Old} | Out-Null # suppress PSUseDeclaredVarsMoreThanAssignments
 
 	Set-Content -Path 'Function:\prompt' -Value {
 		# Write time
@@ -26,7 +26,7 @@ function Install-DotfilesPrompt {
 		}
 
 		# Write PowerShell label
-		Write-Host "$(${Global:Dotfiles.Prompt.Label} ?? 'PS') " -NoNewline
+		Write-Host "$(${global:Dotfiles.Prompt.Label} ?? 'PS') " -NoNewline
 
 		# Write current location, replace home directory with ~
 		$dir = "$($ExecutionContext.SessionState.Path.CurrentLocation)"
@@ -46,8 +46,8 @@ function Install-DotfilesPrompt {
 }
 
 function Uninstall-DotfilesPrompt {
-	if ($null -ne ${Global:Dotfiles.Prompt.Old}) {
-		Set-Content -Path 'Function:\prompt' -Value ${Global:Dotfiles.Prompt.Old}
+	if ($null -ne ${global:Dotfiles.Prompt.Old}) {
+		Set-Content -Path 'Function:\prompt' -Value ${global:Dotfiles.Prompt.Old}
 		Remove-Variable -Name 'Dotfiles.Prompt.Old' -Scope 'Global'
 	}
 }
