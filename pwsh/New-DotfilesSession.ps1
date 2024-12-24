@@ -13,7 +13,7 @@ $init = {
 	${global:Dotfiles.Prompt.Label} = 'DOTFILES'
 
 	# Import module
-	Import-Module '.\Dotfiles.psm1' -ArgumentList @{ 'InstallPrompt' = $true }
+	Import-Module '.\Dotfiles.psm1' -ArgumentList @{ 'UsePrompt' = $true }
 
 	# Exit immediately, if the module didn't load
 	if (-not (Get-Module 'Dotfiles' -ErrorAction Ignore)) {

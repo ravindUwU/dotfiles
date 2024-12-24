@@ -1,6 +1,6 @@
 param (
 	# May include,
-	#     [bool] InstallPrompt
+	#     [bool] UsePrompt
 	[hashtable] $Options
 )
 
@@ -18,7 +18,7 @@ function Export-DotfilesFunction {
 	${script:exportedFunctions} += $name
 }
 
-# Source all scripts
+# Source includes
 foreach ($file in (Get-ChildItem "$PSScriptRoot/include/*.ps1" -ErrorAction Stop)) {
 	. $file
 }
@@ -29,7 +29,7 @@ Export-ModuleMember `
 	-Alias (Set-DotfilesAliases)
 
 # Install prompt if requested
-if ($Options.InstallPrompt) {
+if ($Options.UsePrompt) {
 	Install-DotfilesPrompt
 }
 
@@ -38,7 +38,7 @@ if ($Options.InstallPrompt) {
 $ExecutionContext.SessionState.Module.OnRemove += {
 
 	# Uninstall prompt if previously installed
-	if ($Options.InstallPrompt) {
+	if ($Options.UsePrompt) {
 		Uninstall-DotfilesPrompt
 	}
 
