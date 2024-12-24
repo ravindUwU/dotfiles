@@ -4,6 +4,8 @@ param (
 	[hashtable] $Options
 )
 
+${script:exportedFunctions} ??= @()
+
 <#
 .SYNOPSIS
 	Registers a function name to be exported by the Dotfiles module.
@@ -12,12 +14,8 @@ param (
 		& ((Get-Command 'Export-DotfilesFunction' -ErrorAction Ignore) ?? {}) '<name>'
 #>
 function Export-DotfilesFunction {
-	param (
-		[string] $Name
-	)
-
-	${Script:Dotfiles.Export.Functions} ??= @()
-	${Script:Dotfiles.Export.Functions} += $Name
+	param ([string] $name)
+	${script:exportedFunctions} += $name
 }
 
 # Source all scripts
@@ -27,7 +25,7 @@ foreach ($file in (Get-ChildItem "$PSScriptRoot/include/*.ps1" -ErrorAction Stop
 
 # Export members
 Export-ModuleMember `
-	-Function ${Script:Dotfiles.Export.Functions} `
+	-Function ${script:exportedFunctions} `
 	-Alias (Set-DotfilesAliases)
 
 # Install prompt if requested
