@@ -12,7 +12,7 @@ try {
 		$shortcutPath = "$Env:APPDATA/Microsoft/Windows/Start Menu/Programs/Startup/Dotfiles.$($_.Name).lnk"
 
 		Write-Host "$ahkName`: Removing existing startup shortcut" -ForegroundColor Cyan
-		Remove-Item $shortcutPath -ErrorAction SilentlyContinue
+		Remove-Item $shortcutPath -ErrorAction Ignore
 
 		Write-Host "$ahkName`: Making new startup shortcut" -ForegroundColor Cyan
 		New-Shortcut -Path $shortcutPath -TargetPath $ahkPath | Out-Null

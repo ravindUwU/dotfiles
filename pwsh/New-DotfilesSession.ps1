@@ -16,7 +16,7 @@ $init = {
 	Import-Module '.\Dotfiles.psm1' -ArgumentList @{ 'InstallPrompt' = $true }
 
 	# Exit immediately, if the module didn't load
-	if (-not (Get-Module 'Dotfiles' -ErrorAction SilentlyContinue)) {
+	if (-not (Get-Module 'Dotfiles' -ErrorAction Ignore)) {
 		Write-Host 'Module not loaded; exiting' -ForegroundColor Red
 		exit
 	}

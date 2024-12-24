@@ -1,4 +1,4 @@
-Get-Process 'AutoHotkey64' -ErrorAction SilentlyContinue `
+Get-Process 'AutoHotkey64' -ErrorAction Ignore `
 	| Where-Object {
 		# CLI includes path to a Dotfiles AHK script
 		$_.CommandLine -like "*$PSScriptRoot[/\]*.ahk*"

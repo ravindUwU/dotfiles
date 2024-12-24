@@ -5,8 +5,8 @@ try {
 	Set-Location $PSScriptRoot
 
 	Write-Host 'Cleaning' -ForegroundColor Cyan
-	Remove-Item 'bin' -Recurse -Force -ErrorAction SilentlyContinue
-	Remove-Item 'obj' -Recurse -Force -ErrorAction SilentlyContinue
+	Remove-Item 'bin' -Recurse -Force -ErrorAction Ignore
+	Remove-Item 'obj' -Recurse -Force -ErrorAction Ignore
 
 	Write-Host 'Building' -ForegroundColor Cyan
 	dotnet publish --configuration Release --runtime win-x64 --output '../.published/Dotfiles.RemapLWin'
@@ -15,7 +15,7 @@ try {
 	$exePath = Resolve-Path '../.published/Dotfiles.RemapLWin/Dotfiles.RemapLWin.exe' -ErrorAction Stop
 
 	Write-Host 'Removing existing startup shortcut' -ForegroundColor Cyan
-	Remove-Item $shortcutPath -ErrorAction SilentlyContinue
+	Remove-Item $shortcutPath -ErrorAction Ignore
 
 	Write-Host 'Making new startup shortcut' -ForegroundColor Cyan
 	New-Shortcut -Path $shortcutPath -TargetPath $exePath | Out-Null

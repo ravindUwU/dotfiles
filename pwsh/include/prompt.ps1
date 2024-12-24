@@ -1,6 +1,6 @@
 function Install-DotfilesPrompt {
 
-	${Global:Dotfiles.Prompt.Old} = Get-Content -Path 'Function:\prompt' -ErrorAction SilentlyContinue
+	${Global:Dotfiles.Prompt.Old} = Get-Content -Path 'Function:\prompt' -ErrorAction Ignore
 	${Global:Dotfiles.Prompt.Old} | Out-Null # suppress PSUseDeclaredVarsMoreThanAssignments
 
 	Set-Content -Path 'Function:\prompt' -Value {

@@ -1,5 +1,5 @@
 Write-Host 'Removing startup shortcuts' -ForegroundColor Cyan
-Remove-Item "$Env:APPDATA/Microsoft/Windows/Start Menu/Programs/Startup/Dotfiles.*.ahk.lnk" -ErrorAction SilentlyContinue
+Remove-Item "$Env:APPDATA/Microsoft/Windows/Start Menu/Programs/Startup/Dotfiles.*.ahk.lnk" -ErrorAction Ignore
 
 Write-Host 'Stopping processes' -ForegroundColor Cyan
 & './Stop.ps1'
