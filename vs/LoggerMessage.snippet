@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>LoggerMessage: Trace</Title>
+			<Shortcut>lmt</Shortcut>
+		</Header>
+		<Snippet>
+			<Declarations>
+				<Literal Editable="false">
+					<ID>LoggerMessage</ID>
+					<Function>SimpleTypeName(global::Microsoft.Extensions.Logging.LoggerMessageAttribute)</Function>
+				</Literal>
+				<Literal Editable="false">
+					<ID>LogLevel</ID>
+					<Function>SimpleTypeName(global::Microsoft.Extensions.Logging.LogLevel)</Function>
+				</Literal>
+				<Literal Editable="false">
+					<ID>ILogger</ID>
+					<Function>SimpleTypeName(global::Microsoft.Extensions.Logging.ILogger)</Function>
+				</Literal>
+				<Literal>
+					<ID>name</ID>
+				</Literal>
+			</Declarations>
+			<Code Language="CSharp">
+				<![CDATA[[$LoggerMessage$(
+				Level = $LogLevel$.Trace,
+				Message = ""
+			)]
+	public static partial void $name$($ILogger$ logger);]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>LoggerMessage: Debug</Title>
+			<Shortcut>lmd</Shortcut>
+		</Header>
+		<Snippet>
+			<Declarations>
+				<Literal Editable="false">
+					<ID>LoggerMessage</ID>
+					<Function>SimpleTypeName(global::Microsoft.Extensions.Logging.LoggerMessageAttribute)</Function>
+				</Literal>
+				<Literal Editable="false">
+					<ID>LogLevel</ID>
+					<Function>SimpleTypeName(global::Microsoft.Extensions.Logging.LogLevel)</Function>
+				</Literal>
+				<Literal Editable="false">
+					<ID>ILogger</ID>
+					<Function>SimpleTypeName(global::Microsoft.Extensions.Logging.ILogger)</Function>
+				</Literal>
+				<Literal>
+					<ID>name</ID>
+				</Literal>
+			</Declarations>
+			<Code Language="CSharp">
+				<![CDATA[[$LoggerMessage$(
+				Level = $LogLevel$.Debug,
+				Message = ""
+			)]
+	public static partial void $name$($ILogger$ logger);]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>LoggerMessage: Information</Title>
+			<Shortcut>lmi</Shortcut>
+		</Header>
+		<Snippet>
+			<Declarations>
+				<Literal Editable="false">
+					<ID>LoggerMessage</ID>
+					<Function>SimpleTypeName(global::Microsoft.Extensions.Logging.LoggerMessageAttribute)</Function>
+				</Literal>
+				<Literal Editable="false">
+					<ID>LogLevel</ID>
+					<Function>SimpleTypeName(global::Microsoft.Extensions.Logging.LogLevel)</Function>
+				</Literal>
+				<Literal Editable="false">
+					<ID>ILogger</ID>
+					<Function>SimpleTypeName(global::Microsoft.Extensions.Logging.ILogger)</Function>
+				</Literal>
+				<Literal>
+					<ID>name</ID>
+				</Literal>
+			</Declarations>
+			<Code Language="CSharp">
+				<![CDATA[[$LoggerMessage$(
+				Level = $LogLevel$.Information,
+				Message = ""
+			)]
+	public static partial void $name$($ILogger$ logger);]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>LoggerMessage: Warning</Title>
+			<Shortcut>lmw</Shortcut>
+		</Header>
+		<Snippet>
+			<Declarations>
+				<Literal Editable="false">
+					<ID>LoggerMessage</ID>
+					<Function>SimpleTypeName(global::Microsoft.Extensions.Logging.LoggerMessageAttribute)</Function>
+				</Literal>
+				<Literal Editable="false">
+					<ID>LogLevel</ID>
+					<Function>SimpleTypeName(global::Microsoft.Extensions.Logging.LogLevel)</Function>
+				</Literal>
+				<Literal Editable="false">
+					<ID>ILogger</ID>
+					<Function>SimpleTypeName(global::Microsoft.Extensions.Logging.ILogger)</Function>
+				</Literal>
+				<Literal>
+					<ID>name</ID>
+				</Literal>
+			</Declarations>
+			<Code Language="CSharp">
+				<![CDATA[[$LoggerMessage$(
+				Level = $LogLevel$.Warning,
+				Message = ""
+			)]
+	public static partial void $name$($ILogger$ logger);]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>LoggerMessage: Error</Title>
+			<Shortcut>lme</Shortcut>
+		</Header>
+		<Snippet>
+			<Declarations>
+				<Literal Editable="false">
+					<ID>LoggerMessage</ID>
+					<Function>SimpleTypeName(global::Microsoft.Extensions.Logging.LoggerMessageAttribute)</Function>
+				</Literal>
+				<Literal Editable="false">
+					<ID>LogLevel</ID>
+					<Function>SimpleTypeName(global::Microsoft.Extensions.Logging.LogLevel)</Function>
+				</Literal>
+				<Literal Editable="false">
+					<ID>ILogger</ID>
+					<Function>SimpleTypeName(global::Microsoft.Extensions.Logging.ILogger)</Function>
+				</Literal>
+				<Literal>
+					<ID>name</ID>
+				</Literal>
+			</Declarations>
+			<Code Language="CSharp">
+				<![CDATA[[$LoggerMessage$(
+				Level = $LogLevel$.Error,
+				Message = ""
+			)]
+	public static partial void $name$($ILogger$ logger);]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>LoggerMessage: Critical</Title>
+			<Shortcut>lmc</Shortcut>
+		</Header>
+		<Snippet>
+			<Declarations>
+				<Literal Editable="false">
+					<ID>LoggerMessage</ID>
+					<Function>SimpleTypeName(global::Microsoft.Extensions.Logging.LoggerMessageAttribute)</Function>
+				</Literal>
+				<Literal Editable="false">
+					<ID>LogLevel</ID>
+					<Function>SimpleTypeName(global::Microsoft.Extensions.Logging.LogLevel)</Function>
+				</Literal>
+				<Literal Editable="false">
+					<ID>ILogger</ID>
+					<Function>SimpleTypeName(global::Microsoft.Extensions.Logging.ILogger)</Function>
+				</Literal>
+				<Literal>
+					<ID>name</ID>
+				</Literal>
+			</Declarations>
+			<Code Language="CSharp">
+				<![CDATA[[$LoggerMessage$(
+				Level = $LogLevel$.Critical,
+				Message = ""
+			)]
+	public static partial void $name$($ILogger$ logger);]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>
