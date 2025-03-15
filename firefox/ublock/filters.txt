@@ -73,9 +73,14 @@ learn.microsoft.com###banner-holder *[class*="banner"]:has-text(/([^\w]AI[^\w])|
 ignite.microsoft.com##.session-block__title:has-text(/([Gg]enA[Ii])|(AI[^\w])|([^\w]AI)|([Cc]opilot)|([Oo]penA[Ii])/):upward(.session-block)
 outlook.live.com###RibbonRoot div[role="group"][aria-label="Copilot"]
 
+! StackBlitz AI slop
+stackblitz.com##span[class^="OpenInBold"]:has-text(Open in bolt.new | AI):upward(button):upward(div)
+stackblitz.com##a[href^="https://bolt.new"]:upward(span[class*="_ViteConf"])
+stackblitz.com##div[class*="BoltAdBanner"]
+stackblitz.com##.mosaic-root div[class^="DefaultScreen-container"]:has-text(Ask bolt.new)
+
 ! Miscellaneous web AI slop
 zed.dev##main > a[href="/ai"]
-stackblitz.com##span[class^="OpenInBold"]:has-text(Open in bolt.new | AI):upward(button):upward(div)
 
 ! YouTube shorts, "playables", etc.
 www.youtube.com##tp-yt-app-drawer yt-formatted-string:has-text(Shorts):upward(ytd-guide-entry-renderer)
