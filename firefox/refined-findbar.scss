@@ -7,9 +7,10 @@
 
 	$buttons: true,
 	$buttons-grouped: true,
-	$hide-close-button: true,
 
+	$hide-close-button: true,
 	$hide-when-unfocused: true,
+	$opacity-when-unfocused: 1,
 
 	$order: (
 		LABELS,
