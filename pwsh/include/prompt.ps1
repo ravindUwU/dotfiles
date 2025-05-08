@@ -114,6 +114,14 @@ function Install-DotfilesPrompt {
 	Set-DotfilesPrompt -Preset 'Default'
 
 	Set-Content -Path 'Function:\prompt' -Value {
+		# Print escape code to set terminal working directory of the current shell, which will be
+		# used when a new pane/tab is made.
+		# https://learn.microsoft.com/en-us/windows/terminal/tutorials/new-tab-same-directory
+		$loc = $ExecutionContext.SessionState.Path.CurrentLocation
+		if ($loc.Provider.Name -eq 'FileSystem') {
+			Write-Host "$([char]27)]9;9;`"$($loc.ProviderPath)`"$([char]27)\" -NoNewline
+		}
+
 		$p = Get-DotfilesPrompt
 
 		# Write time
