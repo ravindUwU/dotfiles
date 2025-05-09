@@ -84,6 +84,8 @@ stackblitz.com##.mosaic-root div[class^="DefaultScreen-container"]:has-text(Ask 
 
 ! Miscellaneous web AI slop
 zed.dev##main > a[href="/ai"]
+zed.dev##main > a[href="/agentic"]
+zed.dev##nav a[href="/agentic"]:upward(li)
 
 ! YouTube shorts, "playables", etc.
 www.youtube.com##tp-yt-app-drawer yt-formatted-string:has-text(Shorts):upward(ytd-guide-entry-renderer)
