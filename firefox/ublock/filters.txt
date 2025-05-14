@@ -71,6 +71,14 @@ github.com##ul a[href="/settings/copilot"]:upward(li)
 github.com##.HeaderMenu ul li a div:has-text(Copilot):upward(li)
 github.com##[data-testid="open-in-copilot-agent-button"]:upward(div[class*="CopilotWorkspaceButton"])
 
+! VS Code AI slop advertisements
+code.visualstudio.com##.updates-banner:has(a[class^="copilot"])
+code.visualstudio.com##nav li:has(a[href^="/docs/copilot"])
+code.visualstudio.com##.hero-content .primary-buttons a[class*="copilot"]
+code.visualstudio.com##.copilot-free-banner
+code.visualstudio.com##h2:has-text(Agent mode):upward(section)
+code.visualstudio.com##h2:has-text(Any model for any team):upward(section)
+
 ! Microsoft AI slop
 learn.microsoft.com###banner-holder *[class*="banner"]:has-text(/([^\w]AI[^\w])|([Aa]rtificial [Ii]ntelligence)/)
 ignite.microsoft.com##.session-block__title:has-text(/([Gg]enA[Ii])|(AI[^\w])|([^\w]AI)|([Cc]opilot)|([Oo]penA[Ii])/):upward(.session-block)
