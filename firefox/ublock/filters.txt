@@ -71,6 +71,7 @@ github.com##span.ActionListItem-label:has-text(Copilot):upward(.ActionListItem)
 github.com##ul a[href="/settings/copilot"]:upward(li)
 github.com##.HeaderMenu ul li a div:has-text(Copilot):upward(li)
 github.com##[data-testid="open-in-copilot-agent-button"]:upward(div[class*="CopilotWorkspaceButton"])
+github.com##.feed-right-sidebar .dashboard-changelog a:has-text(/([Gg]enA[Ii])|(AI[^\w])|([^\w]AI)|([Cc]opilot)|([Oo]penA[Ii])|(GitHub Models)/):upward(.TimelineItem)
 
 ! VS Code AI slop advertisements
 code.visualstudio.com##.updates-banner:has(a[class^="copilot"])
