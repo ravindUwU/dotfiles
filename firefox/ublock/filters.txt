@@ -112,3 +112,7 @@ www.youtube.com##span.ytd-reel-shelf-renderer:has-text(Shorts):upward(ytd-reel-s
 www.youtube.com##ytd-rich-shelf-renderer span:has-text(Primetime movies for you):upward(ytd-rich-shelf-renderer)
 www.youtube.com##ytd-rich-shelf-renderer #title-text:has-text(Shorts):upward(ytd-rich-shelf-renderer)
 www.youtube.com##ytd-rich-shelf-renderer span:has-text(Playables):upward(ytd-rich-shelf-renderer)
+
+! Remove advertisements placed above the Bitwarden password generator.
+bitwarden.com/password-generator###password-generator-hero
+bitwarden.com/password-generator###gm-5-star-user-ratings-validation
