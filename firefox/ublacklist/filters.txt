@@ -17,6 +17,11 @@
 *://*.coursehero.com/*
 *://*.toptal.com/*
 *://*.codepen.io/*
+*://*.facebook.com/*
+*://*.tutorialsteacher.com/*
+*://*.byjus.com/*
+*://*.wix.com/*
+*://*.swagger.io/*
 
 # Twitter
 *://*.twitter.com/*
