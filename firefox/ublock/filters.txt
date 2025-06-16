@@ -40,6 +40,7 @@ www.google.com##h1:has-text(/AI Overview/i):upward(div[jscontroller])
 www.google.com##span:has-text(People also ask):upward(div[jsname])
 www.google.com##span#promo_label_id:upward(div[jscontroller])
 www.google.com##promo-middle-slot
+www.google.com##div[jscontroller] strong:has-text(AI Overview):upward([data-mcp])
 
 ! MDN AI slop
 developer.mozilla.org##.menu-link.top-level-entry:has-text('AI Help')
@@ -72,6 +73,7 @@ github.com##ul a[href="/settings/copilot"]:upward(li)
 github.com##.HeaderMenu ul li a div:has-text(Copilot):upward(li)
 github.com##[data-testid="open-in-copilot-agent-button"]:upward(div[class*="CopilotWorkspaceButton"])
 github.com##.feed-right-sidebar .dashboard-changelog a:has-text(/([Gg]enA[Ii])|(AI[^\w])|([^\w]AI)|([Cc]opilot)|([Oo]penA[Ii])|(GitHub Models)/):upward(.TimelineItem)
+github.com##.AppHeader-localBar nav ul li:has(a#models-tab)
 
 ! VS Code AI slop advertisements
 code.visualstudio.com##.updates-banner:has(a[class^="copilot"])
@@ -92,11 +94,17 @@ stackblitz.com##span[class^="OpenInBold"]:has-text(Open in bolt.new | AI):upward
 stackblitz.com##a[href^="https://bolt.new"]:upward(span[class*="_ViteConf"])
 stackblitz.com##div[class*="BoltAdBanner"]
 stackblitz.com##.mosaic-root div[class^="DefaultScreen-container"]:has-text(Ask bolt.new)
+stackblitz.com##footer[class^="SidebarLayout-footer"] div[class^="SidebarFooter-banners"]
 
 ! Miscellaneous web AI slop
 zed.dev##main > a[href="/ai"]
 zed.dev##main > a[href="/agentic"]
 zed.dev##nav a[href="/agentic"]:upward(li)
+
+! Remove "deploy ur app on v*rc*l trusted by companies like op*nai, ch*ck-f*l-a" box on the shadcn ui
+! website. If anything, these are reasons NOT to use v*rc*l. Disgusting companies = disgusting ads.
+! Disgusting ads = blocked.
+ui.shadcn.com##a[href^="https://vercel.com/new"]:upward(.group)
 
 ! YouTube shorts, "playables", etc.
 www.youtube.com##tp-yt-app-drawer yt-formatted-string:has-text(Shorts):upward(ytd-guide-entry-renderer)
