@@ -51,6 +51,8 @@ developer.mozilla.org##.submenu-item:has-text('AI Help'):upward(li)
 stackoverflow.com###hot-network-questions
 stackoverflow.com##.js-freemium-cta
 stackoverflow.com##newsletter-ad
+stackoverflow.com###newsletter-ad
+stackoverflow.com###nav-askstack
 
 ! Stack Exchange AI slop
 stackoverflow.com,stackexchange.com,superuser.com##.s-navigation li:has-text('OverflowAI')
@@ -74,6 +76,7 @@ github.com##.HeaderMenu ul li a div:has-text(Copilot):upward(li)
 github.com##[data-testid="open-in-copilot-agent-button"]:upward(div[class*="CopilotWorkspaceButton"])
 github.com##.feed-right-sidebar .dashboard-changelog a:has-text(/([Gg]enA[Ii])|(AI[^\w])|([^\w]AI)|([Cc]opilot)|([Oo]penA[Ii])|(GitHub Models)/):upward(.TimelineItem)
 github.com##.AppHeader-localBar nav ul li:has(a#models-tab)
+github.com##button[data-testid="open-in-copilot-agent-button"]:upward(div[class*="CopilotAgentModeButton"])
 docs.github.com##div[class^="Popover"][aria-labelledby="ai-search-cta-heading"]
 docs.github.com##footer button:has-text(Ask Copilot):upward(section) div[class^="Box"]
 
@@ -90,6 +93,7 @@ learn.microsoft.com###banner-holder *[class*="banner"]:has-text(/([^\w]AI[^\w])|
 ignite.microsoft.com##.session-block__title:has-text(/([Gg]enA[Ii])|(AI[^\w])|([^\w]AI)|([Cc]opilot)|([Oo]penA[Ii])/):upward(.session-block)
 outlook.live.com###RibbonRoot div[role="group"][aria-label="Copilot"]
 learn.microsoft.com##main .alert:has-text(Copilot)
+learn.microsoft.com###search-answer-title:has-text(AI Summary):upward(#search-answer)
 
 ! StackBlitz AI slop
 stackblitz.com##span[class^="OpenInBold"]:has-text(Open in bolt.new | AI):upward(button):upward(div)
@@ -102,13 +106,14 @@ stackblitz.com##footer[class^="SidebarLayout-footer"] div[class^="SidebarFooter-
 zed.dev##main > a[href="/ai"]
 zed.dev##main > a[href="/agentic"]
 zed.dev##nav a[href="/agentic"]:upward(li)
+angular.dev##.adev-banner:has-text(/(AI )|( AI)/)
+www.notion.com##dl:has(button[class^="toggleList_toggleButton__"][title="Expand Notion AI section"])
 
 eslint.org##nav ul li a[href="/docs/latest/use/mcp"]:upward(li)
 eslint.org##.search li a[href*="/mcp"]:upward(li)
 
 ! Remove "deploy ur app on v*rc*l trusted by companies like op*nai, ch*ck-f*l-a" box on the shadcn ui
-! website. If anything, these are reasons NOT to use v*rc*l. Disgusting companies = disgusting ads.
-! Disgusting ads = blocked.
+! website. If anything, these are reasons NOT to use v*rc*l.
 ui.shadcn.com##a[href^="https://vercel.com/new"]:upward(.group)
 
 ! YouTube shorts, "playables", etc.
@@ -125,3 +130,6 @@ bitwarden.com/password-generator###gm-5-star-user-ratings-validation
 ! Remove stories about & adjacent to AI (ugh) from lobste.rs <3.
 lobste.rs##.story:has(.tag_vibecoding)
 lobste.rs##.story:has(.tag_ai)
+
+! Medium banners UGH
+blog.angular.dev##h2:has-text(Sign up to discover human stories):upward(div[style="bottom: 0px;"])
