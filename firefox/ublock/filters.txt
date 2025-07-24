@@ -67,6 +67,7 @@ github.blog##header nav li > a:has-text(AI & ML):upward(li)
 github.blog##main .post-columns article:has-text(/Copilot|[^\w]AI[^\w]/)
 github.com##.feed-right-sidebar a[href="/marketplace/models"]:upward(.js-notice)
 github.com##[aria-label="User navigation"]:upward(1) ul li a[href="/github-copilot/signup"]:upward(li)
+github.com##[aria-label="User navigation"]:upward(1) ul li:has-text(MCP Server)
 github.com##.dashboard-changelog ul li:has-text('Copilot')
 github.com##.AppHeader-CopilotChat
 github.com##copilot-dashboard-entrypoint
