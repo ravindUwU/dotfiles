@@ -5,30 +5,6 @@
 !   - Filter lists / Import:
 !     - https://raw.githubusercontent.com/ravindUwU/dotfiles/main/firefox/ublock/filters.txt
 
-! Twitter blue
-twitter.com##aside[aria-label="Get Verified"][role="complementary"]:upward(div)
-twitter.com##a[href="/i/verified-choose"]
-twitter.com##a[href="/i/verified-orgs-signup"]
-twitter.com##a[href="/i/premium_sign_up"]
-twitter.com##aside:has-text('Subscribe to Premium')
-twitter.com##a[href="/jobs"]
-twitter.com##main div[data-testid="sidebarColumn"] aside[aria-label="Expiring soon!"]:upward(div)
-x.com##aside[aria-label="Get Verified"][role="complementary"]:upward(div)
-x.com##a[href="/i/verified-choose"]
-x.com##a[href="/i/verified-orgs-signup"]
-x.com##a[href="/i/premium_sign_up"]
-x.com##aside:has-text('Subscribe to Premium')
-x.com##a[href="/jobs"]
-x.com##main div[data-testid="sidebarColumn"] aside[aria-label="Expiring soon!"]:upward(div)
-
-! Twitter events
-twitter.com##[data-testid="eventHero"][role="link"]
-x.com##[data-testid="eventHero"][role="link"]
-
-! Twitter AI slop
-twitter.com##a[href="/i/grok"]
-x.com##a[href="/i/grok"]
-
 ! Google sign in prompt
 ! https://old.reddit.com/r/uBlockOrigin/wiki/solutions#wiki_google_login_dialogs_on_various_pages
 ||accounts.google.com/gsi/*$xhr,script,3p
@@ -145,3 +121,29 @@ lobste.rs##.story:has(.tag_ai)
 
 ! Medium banners UGH
 blog.angular.dev##h2:has-text(Sign up to discover human stories):upward(div[style="bottom: 0px;"])
+
+!!! "Archived" rules for websites I don't use anymore.
+
+! ! Twitter blue
+! twitter.com##aside[aria-label="Get Verified"][role="complementary"]:upward(div)
+! twitter.com##a[href="/i/verified-choose"]
+! twitter.com##a[href="/i/verified-orgs-signup"]
+! twitter.com##a[href="/i/premium_sign_up"]
+! twitter.com##aside:has-text('Subscribe to Premium')
+! twitter.com##a[href="/jobs"]
+! twitter.com##main div[data-testid="sidebarColumn"] aside[aria-label="Expiring soon!"]:upward(div)
+! x.com##aside[aria-label="Get Verified"][role="complementary"]:upward(div)
+! x.com##a[href="/i/verified-choose"]
+! x.com##a[href="/i/verified-orgs-signup"]
+! x.com##a[href="/i/premium_sign_up"]
+! x.com##aside:has-text('Subscribe to Premium')
+! x.com##a[href="/jobs"]
+! x.com##main div[data-testid="sidebarColumn"] aside[aria-label="Expiring soon!"]:upward(div)
+!
+! ! Twitter events
+! twitter.com##[data-testid="eventHero"][role="link"]
+! x.com##[data-testid="eventHero"][role="link"]
+!
+! ! Twitter AI slop
+! twitter.com##a[href="/i/grok"]
+! x.com##a[href="/i/grok"]
