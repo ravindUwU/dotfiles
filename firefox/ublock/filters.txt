@@ -75,7 +75,7 @@ github.com##span.ActionListItem-label:has-text(Copilot):upward(.ActionListItem)
 github.com##ul a[href="/settings/copilot"]:upward(li)
 github.com##.HeaderMenu ul li a div:has-text(Copilot):upward(li)
 github.com##[data-testid="open-in-copilot-agent-button"]:upward(div[class*="CopilotWorkspaceButton"])
-github.com##.feed-right-sidebar .dashboard-changelog a:has-text(/([Gg]enA[Ii])|(AI[^\w])|([^\w]AI)|([Cc]opilot)|([Oo]penA[Ii])|(GitHub Models)|(agent mode)/i):upward(.TimelineItem)
+github.com##.feed-right-sidebar .dashboard-changelog a:has-text(/([Gg]enA[Ii])|(AI[^\w])|([^\w]AI)|([Cc]opilot)|([Oo]penA[Ii])|(GitHub Models)|(agent mode)|model context protocol|mcp/i):upward(.TimelineItem)
 github.com##.AppHeader-localBar nav ul li:has(a#models-tab)
 github.com##button[data-testid="open-in-copilot-agent-button"]:upward(div[class*="CopilotAgentModeButton"])
 docs.github.com##div[class^="Popover"][aria-labelledby="ai-search-cta-heading"]
@@ -88,6 +88,7 @@ code.visualstudio.com##.hero-content .primary-buttons a[class*="copilot"]
 code.visualstudio.com##.copilot-free-banner
 code.visualstudio.com##h2:has-text(Agent mode):upward(section)
 code.visualstudio.com##h2:has-text(Any model for any team):upward(section)
+code.visualstudio.com##h2:has-text(Next edit suggestions):upward(section)
 code.visualstudio.com##.updates-banner:has(p:has-text(/(MCP )|( MCP)|(agent )|( agent)/))
 code.visualstudio.com##.hero-text h1
 code.visualstudio.com##.hero-video-container
@@ -102,6 +103,8 @@ ignite.microsoft.com##.session-block__title:has-text(/([Gg]enA[Ii])|(AI[^\w])|([
 outlook.live.com###RibbonRoot div[role="group"][aria-label="Copilot"]
 learn.microsoft.com##main .alert:has-text(Copilot)
 learn.microsoft.com###search-answer-title:has-text(AI Summary):upward(#search-answer)
+to-do.live.com###O365_AppTile_Microsoft365Tile
+outlook.live.com###O365_AppTile_Microsoft365Tile
 
 ! StackBlitz AI slop
 stackblitz.com##span[class^="OpenInBold"]:has-text(Open in bolt.new | AI):upward(button):upward(div)
@@ -115,6 +118,7 @@ zed.dev##main > a[href="/ai"]
 zed.dev##main > a[href="/agentic"]
 zed.dev##nav a[href="/agentic"]:upward(li)
 angular.dev##.adev-banner:has-text(/(AI )|( AI)/)
+angular.dev##.docs-faceted-list-item:has(.docs-secondary-nav-header:has-text(Build with AI))
 www.notion.com##dl:has(button[class^="toggleList_toggleButton__"][title="Expand Notion AI section"])
 
 eslint.org##nav ul li a[href="/docs/latest/use/mcp"]:upward(li)
