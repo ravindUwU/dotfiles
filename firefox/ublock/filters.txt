@@ -16,7 +16,7 @@ www.google.com##h1:has-text(/AI Overview/i):upward(div[jscontroller])
 www.google.com##span:has-text(People also ask):upward(div[jsname])
 www.google.com##promo-middle-slot
 www.google.com##div[jscontroller] strong:has-text(AI Overview):upward([data-mcp])
-www.google.com##[role=dialog]
+www.google.com##:matches-path(/^/$/) [role=dialog]
 
 ! MDN AI slop
 developer.mozilla.org##.menu-link.top-level-entry:has-text('AI Help')
