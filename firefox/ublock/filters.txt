@@ -22,6 +22,7 @@ www.google.com##:matches-path(/^/$/) [role=dialog]
 developer.mozilla.org##.menu-link.top-level-entry:has-text('AI Help')
 developer.mozilla.org##.top-banner:has-text('AI Help')
 developer.mozilla.org##.submenu-item:has-text('AI Help'):upward(li)
+developer.mozilla.org##.page-layout__banner
 
 ! Stack Overflow
 stackoverflow.com###hot-network-questions
@@ -51,7 +52,7 @@ github.com##span.ActionListItem-label:has-text(Copilot):upward(.ActionListItem)
 github.com##ul a[href="/settings/copilot"]:upward(li)
 github.com##.HeaderMenu ul li a div:has-text(Copilot):upward(li)
 github.com##[data-testid="open-in-copilot-agent-button"]:upward(div[class*="CopilotWorkspaceButton"])
-github.com##.feed-right-sidebar .dashboard-changelog a:has-text(/([Gg]enA[Ii])|(AI[^\w])|([^\w]AI)|([Cc]opilot)|([Oo]penA[Ii])|(GitHub Models)|(agent mode)|model context protocol|mcp/i):upward(.TimelineItem)
+github.com##.feed-right-sidebar .dashboard-changelog a:has-text(/([Gg]enA[Ii])|(AI[^\w])|([^\w]AI)|([Cc]opilot)|([Oo]penA[Ii])|(GitHub Models)|(Grok)|(agent mode)|model context protocol|mcp|claude/i):upward(.TimelineItem)
 github.com##.AppHeader-localBar nav ul li:has(a#models-tab)
 github.com##button[data-testid="open-in-copilot-agent-button"]:upward(div[class*="CopilotAgentModeButton"])
 docs.github.com##div[class^="Popover"][aria-labelledby="ai-search-cta-heading"]
@@ -95,6 +96,8 @@ zed.dev##main > a[href="/agentic"]
 zed.dev##nav a[href="/agentic"]:upward(li)
 angular.dev##.adev-banner:has-text(/(AI )|( AI)/)
 angular.dev##.docs-faceted-list-item:has(.docs-secondary-nav-header:has-text(Build with AI))
+angular.dev##.feature:has(h3:has-text(AI-))
+angular.dev##.docs-card:has-text( AI )
 www.notion.com##dl:has(button[class^="toggleList_toggleButton__"][title="Expand Notion AI section"])
 
 eslint.org##nav ul li a[href="/docs/latest/use/mcp"]:upward(li)
@@ -104,12 +107,20 @@ eslint.org##.search li a[href*="/mcp"]:upward(li)
 ! website. If anything, these are reasons NOT to use v*rc*l.
 ui.shadcn.com##a[href^="https://vercel.com/new"]:upward(.group)
 
-! YouTube shorts, "playables", etc.
+! YouTube ai slop, shorts, "playables", etc.
+www.youtube.com##ytd-expandable-metadata-renderer[has-video-summary]
 www.youtube.com##tp-yt-app-drawer yt-formatted-string:has-text(Shorts):upward(ytd-guide-entry-renderer)
 www.youtube.com##span.ytd-reel-shelf-renderer:has-text(Shorts):upward(ytd-reel-shelf-renderer)
 www.youtube.com##ytd-rich-shelf-renderer span:has-text(Primetime movies for you):upward(ytd-rich-shelf-renderer)
 www.youtube.com##ytd-rich-shelf-renderer #title-text:has-text(Shorts):upward(ytd-rich-shelf-renderer)
 www.youtube.com##ytd-rich-shelf-renderer span:has-text(Playables):upward(ytd-rich-shelf-renderer)
+www.youtube.com##grid-shelf-view-model
+
+! Remove rubbish from youtube results
+www.youtube.com##yt-content-metadata-view-model:has-text(Sky News Australia):upward(yt-lockup-view-model)
+www.youtube.com###channel-info:has-text(Sky News Australia):upward(ytd-video-renderer)
+www.youtube.com##ytd-channel-name:has-text(Sky News Australia):upward(ytd-channel-renderer)
+www.youtube.com##ytd-channel-name:has-text(Sky News Australia):upward(ytd-grid-video-renderer)
 
 ! Remove advertisements placed above the Bitwarden password generator.
 bitwarden.com/password-generator###password-generator-hero
