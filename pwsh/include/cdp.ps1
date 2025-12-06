@@ -15,37 +15,8 @@
 	▌ p2
 
 	PS ~/Projects/p2>
-
-.EXAMPLE
-	PS> cdp
-	^C
-	PS ~/Projects>
-
-.EXAMPLE
-	PS ~/Projects> cdp 2
-	> 2
-	1/2
-	▌ p2
-
-	PS ~/Projects/p2>
-
-.NOTES
-	Use ~/Dotfiles.Cdp.Projects.ps1 to configure subprojects,
-
-		@{
-			'<project>' = @{
-				Subprojects = ('<subproject 1>', '<subproject 2>')
-			}
-		}
 #>
 function cdp {
-	# Load config
-	$config = if (Test-Path "$HOME/Dotfiles.Cdp.Projects.ps1")  {
-		. "$HOME/Dotfiles.Cdp.Projects.ps1"
-	} else {
-		@{}
-	}
-
 	$projectRoot = "$HOME/Projects"
 
 	# Make list of projects
@@ -64,17 +35,6 @@ function cdp {
 				Name = $projectName
 				Path = $projectPath
 				ParentName = $null
-			}
-
-			# Yield subprojects
-			($config[$_.Name].Subprojects ?? @()) | ForEach-Object {
-				$subprojectName = "$projectName/$_"
-				$subprojectPath = Join-Path $projectPath $_
-				[PSCustomObject]@{
-					Name = $subprojectName
-					Path = $subprojectPath
-					ParentName = $projectName
-				}
 			}
 		}
 	)
