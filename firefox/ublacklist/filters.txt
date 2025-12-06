@@ -29,6 +29,8 @@
 *://*.spotify.com/*
 *://*.tiktok.com/*
 *://*.medium.com/*
+*://*.htmx.org/*
+*://*.documentation.help/*
 
 # Twitter
 *://*.twitter.com/*

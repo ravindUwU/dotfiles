@@ -17,6 +17,7 @@ www.google.com##span:has-text(People also ask):upward(div[jsname])
 www.google.com##promo-middle-slot
 www.google.com##div[jscontroller] strong:has-text(AI Overview):upward([data-mcp])
 www.google.com##:matches-path(/^/$/) [role=dialog]
+www.google.com##button:has(span:has-text(AI Mode))
 
 ! MDN AI slop
 developer.mozilla.org##.menu-link.top-level-entry:has-text('AI Help')
@@ -55,6 +56,8 @@ github.com##[data-testid="open-in-copilot-agent-button"]:upward(div[class*="Copi
 github.com##.feed-right-sidebar .dashboard-changelog a:has-text(/([Gg]enA[Ii])|(AI[^\w])|([^\w]AI)|([Cc]opilot)|([Oo]penA[Ii])|(GitHub Models)|(Grok)|(agent mode)|model context protocol|mcp|claude/i):upward(.TimelineItem)
 github.com##.AppHeader-localBar nav ul li:has(a#models-tab)
 github.com##button[data-testid="open-in-copilot-agent-button"]:upward(div[class*="CopilotAgentModeButton"])
+github.com##.octicon-agent:upward(div[class^=DashboardListView-module__contextBubbleMenu])
+github.com##div[class^=prc-ActionMenu] li[class^=prc-ActionList-ActionListItem]:has(span[class^=prc-ActionList-ItemLabel]:has-text(Copilot))
 docs.github.com##div[class^="Popover"][aria-labelledby="ai-search-cta-heading"]
 docs.github.com##footer button:has-text(Ask Copilot):upward(section) div[class^="Box"]
 
@@ -89,6 +92,8 @@ stackblitz.com##a[href^="https://bolt.new"]:upward(span[class*="_ViteConf"])
 stackblitz.com##div[class*="BoltAdBanner"]
 stackblitz.com##.mosaic-root div[class^="DefaultScreen-container"]:has-text(Ask bolt.new)
 stackblitz.com##footer[class^="SidebarLayout-footer"] div[class^="SidebarFooter-banners"]
+stackblitz.com##header a[href^="https://bolt.new"]
+stackblitz.com##header span[class^="_logoDivider_"]
 
 ! Miscellaneous web AI slop
 zed.dev##main > a[href="/ai"]
