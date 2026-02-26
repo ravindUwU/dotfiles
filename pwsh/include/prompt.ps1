@@ -124,10 +124,15 @@ function Install-DotfilesPrompt {
 
 		$p = Get-DotfilesPrompt
 
+		$bg = $PSStyle.Background
+		$fg = $PSStyle.Foreground
+
 		# Write time
 		if ($p.HasTime) {
-			Write-Host "$([datetime]::Now.ToString('hh:mm:sst').ToLower()) " -NoNewline -ForegroundColor DarkGray
+			Write-Host "$($fg.BrightBlack)$([datetime]::Now.ToString('hh:mm:sst').ToLower())$($PSStyle.Reset) " -NoNewline
 		}
+
+		$hasTag = $false
 
 		# Warn if elevated session
 		# https://superuser.com/a/756696
@@ -140,7 +145,8 @@ function Install-DotfilesPrompt {
 				[System.Security.Principal.WindowsBuiltInRole]::Administrator
 			)
 		) {
-			Write-Host '[Admin] ' -NoNewline -ForegroundColor Red
+			Write-Host "$($bg.BrightRed)$($fg.BrightWhite) Admin $($PSStyle.Reset)" -NoNewline
+			$hasTag = $true
 		}
 
 		# Write non-dev .NET environment
@@ -149,11 +155,12 @@ function Install-DotfilesPrompt {
 			-and ($null -ne $Env:DOTNET_ENVIRONMENT) `
 			-and ('Development' -ne $Env:DOTNET_ENVIRONMENT)
 		) {
-			Write-Host "[.NET: $Env:DOTNET_ENVIRONMENT] " -NoNewline -ForegroundColor Yellow
+			Write-Host "$($bg.BrightYellow)$($fg.Black) .NET: $Env:DOTNET_ENVIRONMENT $($PSStyle.Reset)" -NoNewline
+			$hasTag = $true
 		}
 
 		# Write label
-		Write-Host "$(${global:Dotfiles.Prompt.Label} ?? 'PS')$(if ($p.HasCurrentDir) { ' ' })" -NoNewline
+		Write-Host "$(if ($hasTag) { ' '})$(${global:Dotfiles.Prompt.Label} ?? 'PS')$(if ($p.HasCurrentDir) { ' ' })" -NoNewline
 
 		# Write current directory
 		if ($p.HasCurrentDir) {
