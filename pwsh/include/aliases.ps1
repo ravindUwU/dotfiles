@@ -2,7 +2,7 @@ function Set-DotfilesAliases {
 
 	$aliases = @{
 		'gh' = 'Get-Help'
-		'sl' = 'pspsps'
+		'sl' = 'hehe'
 	}
 
 	foreach ($a in $aliases.GetEnumerator()) {
