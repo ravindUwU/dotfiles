@@ -207,7 +207,7 @@ function Install-DotfilesPrompt {
 		}
 
 		# Label, defaulting to "PS".
-		$s += "$(if ($hasTags) { ' '})$(${global:Dotfiles.Prompt.Label} ?? 'PS')$(if ($p.HasCurrentDir) { ' ' })"
+		$s += "$(if ($hasTags) { ' ' })$(${global:Dotfiles.Prompt.Label} ?? 'PS')$(if ($p.HasCurrentDir) { ' ' })"
 
 		# Current directory, with home dir abbreviated as ~.
 		if ($p.HasCurrentDir) {
@@ -216,8 +216,8 @@ function Install-DotfilesPrompt {
 			$h = if ($p.HomeDir) { $p.HomeDir } else { $HOME }
 			if (
 				($h -eq $cwd) `
-				-or $cwd.ToLower().StartsWith("$h\".ToLower()) `
-				-or $cwd.ToLower().StartsWith("$h/".ToLower())
+				-or $cwd.StartsWith("$h$([System.IO.Path]::DirectorySeparatorChar)", [System.StringComparison]::OrdinalIgnoreCase) `
+				-or $cwd.StartsWith("$h$([System.IO.Path]::AltDirectorySeparatorChar)", [System.StringComparison]::OrdinalIgnoreCase)
 			) {
 				$cwd = "~$($cwd.Substring($h.Length))"
 			}
