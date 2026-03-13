@@ -1,15 +1,15 @@
 class DotfilesPrompt {
 	[bool] $HasTime
-	[bool] $HasElevationWarning
-	[bool] $HasDotnetEnvironment
+	[bool] $HasElevationTag
+	[bool] $HasEnvTags
 	[bool] $HasCurrentDir
 	[string] $HomeDir
 
 	[DotfilesPrompt] Clone() {
 		return [DotfilesPrompt]@{
 			HasTime = $this.HasTime
-			HasElevationWarning = $this.HasElevationWarning
-			HasDotnetEnvironment = $this.HasDotnetEnvironment
+			HasElevationTag = $this.HasElevationTag
+			HasEnvTags = $this.HasEnvTags
 			HasCurrentDir = $this.HasCurrentDir
 			HomeDir = $this.HomeDir
 		}
@@ -19,15 +19,15 @@ class DotfilesPrompt {
 ${script:Dotfiles.Prompt.Presets} = @{
 	Default = [DotfilesPrompt]@{
 		HasTime = $true
-		HasElevationWarning = $true
-		HasDotnetEnvironment = $true
+		HasElevationTag = $true
+		HasEnvTags = $true
 		HasCurrentDir = $true
 		HomeDir = $null
 	}
 	Minimal = [DotfilesPrompt]@{
 		HasTime = $false
-		HasElevationWarning = $true
-		HasDotnetEnvironment = $true
+		HasElevationTag = $true
+		HasEnvTags = $true
 		HasCurrentDir = $false
 		HomeDir = $null
 	}
@@ -70,10 +70,10 @@ function Set-DotfilesPrompt {
 		[switch] $Time,
 
 		[Parameter(ParameterSetName='Custom')]
-		[switch] $ElevationWarning,
+		[switch] $ElevationTag,
 
 		[Parameter(ParameterSetName='Custom')]
-		[switch] $DotnetEnvironment,
+		[switch] $EnvTags,
 
 		[Parameter(ParameterSetName='Custom')]
 		[switch] $CurrentDir,
@@ -96,8 +96,8 @@ function Set-DotfilesPrompt {
 				$p = (Get-DotfilesPrompt).Clone()
 
 				if ($bound -contains 'Time') { $p.HasTime = $Time }
-				if ($bound -contains 'ElevationWarning') { $p.HasElevationWarning = $ElevationWarning }
-				if ($bound -contains 'DotnetEnvironment') { $p.HasDotnetEnvironment = $DotnetEnvironment }
+				if ($bound -contains 'ElevationTag') { $p.HasElevationTag = $ElevationTag }
+				if ($bound -contains 'EnvTags') { $p.HasEnvTags = $EnvTags }
 				if ($bound -contains 'CurrentDir') { $p.HasCurrentDir = $CurrentDir }
 				if ($bound -contains 'HomeDir') { $p.HomeDir = $resolvedHomeDir }
 
@@ -105,8 +105,8 @@ function Set-DotfilesPrompt {
 			} else {
 				${global:Dotfiles.Prompt} = [DotfilesPrompt]@{
 					HasTime = $Time
-					HasElevationWarning = $ElevationWarning
-					HasDotnetEnvironment = $DotnetEnvironment
+					HasElevationTag = $ElevationTag
+					HasEnvTags = $EnvTags
 					HasCurrentDir = $CurrentDir
 					HomeDir = $resolvedHomeDir
 				}
@@ -146,7 +146,7 @@ function Install-DotfilesPrompt {
 		# Elevated session warning
 		# https://superuser.com/a/756696
 		if (
-			$p.HasElevationWarning `
+			$p.HasElevationTag `
 			-and (
 				[System.Security.Principal.WindowsPrincipal] `
 				[System.Security.Principal.WindowsIdentity]::GetCurrent()
@@ -158,14 +158,36 @@ function Install-DotfilesPrompt {
 			$hasTag = $true
 		}
 
-		# Non-dev .NET environment
-		if (
-			$p.HasDotnetEnvironment `
-			-and ($null -ne $Env:DOTNET_ENVIRONMENT) `
-			-and ('Development' -ne $Env:DOTNET_ENVIRONMENT)
-		) {
-			$s += "$($bg.BrightYellow)$($fg.Black) .NET: $Env:DOTNET_ENVIRONMENT $($PSStyle.Reset)"
-			$hasTag = $true
+		# Env tags
+		if ($p.HasEnvTags) {
+			$segments = @(
+				$env:DOTFILES_PROMPT_TAGS -split ';' `
+					| ForEach-Object {
+						if ("$_".Trim() -match '^(?<Label>[^:\r\n]+):(?<Var>\w+)(:(?<Default>[^:\r\n]+))?$') {
+							@{
+								Var = $Matches.Var
+								Label = $Matches.Label
+								Default = $Matches.Default
+							}
+						} else {
+							Write-Host "$($fg.Yellow)WARNING:$($PSStyle.Reset) Malformed prompt env tag segment '$_'"
+						}
+					} `
+					| Where-Object { $_ }
+			)
+
+			foreach ($seg in $segments) {
+				$value = "$((Get-Item (Join-Path 'Env:' $seg.Var) -ErrorAction Ignore).Value)"
+
+				# Include tag if default defined and different env; or default undefined and env defined.
+				if (
+					($seg.Default -and ($value -ne $seg.Default)) `
+					-or ((-not $seg.Default) -and $value)
+				) {
+					$s += "$($bg.BrightYellow)$($fg.Black) $($seg.Label):$(if ($value) { $value } else { '?' }) $($PSStyle.Reset)"
+					$hasTag = $true
+				}
+			}
 		}
 
 		# Label, defaulting to "PS".
