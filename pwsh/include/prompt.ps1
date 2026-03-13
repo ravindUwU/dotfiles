@@ -24,6 +24,13 @@ ${script:Dotfiles.Prompt.Presets} = @{
 		HasCurrentDir = $true
 		HomeDir = $Env:USERPROFILE
 	}
+	Minimal = [DotfilesPrompt]@{
+		HasTime = $false
+		HasElevationWarning = $true
+		HasDotnetEnvironment = $true
+		HasCurrentDir = $false
+		HomeDir = $Env:USERPROFILE
+	}
 }
 
 function Get-DotfilesPromptPreset {
@@ -53,6 +60,7 @@ function Set-DotfilesPrompt {
 	[CmdletBinding()]
 	param (
 		[Parameter(Mandatory, ParameterSetName='Preset')]
+		[ValidateSet('Default', 'Minimal')]
 		[string] $Preset,
 
 		[Parameter(ParameterSetName='Custom')]
