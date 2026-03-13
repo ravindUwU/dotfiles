@@ -123,6 +123,9 @@ function Install-DotfilesPrompt {
 
 	Set-Content -Path 'Function:\prompt' -Value {
 		$s = ''
+		$bg = $PSStyle.Background
+		$fg = $PSStyle.Foreground
+		$p = Get-DotfilesPrompt
 
 		# OSC 9;9 sequence to tell the terminal about the current working directory.
 		# https://learn.microsoft.com/windows/terminal/tutorials/new-tab-same-directory
@@ -131,19 +134,32 @@ function Install-DotfilesPrompt {
 			$s += "$([char]27)]9;9;`"$($loc.ProviderPath)`"$([char]27)\"
 		}
 
-		$p = Get-DotfilesPrompt
-
-		$bg = $PSStyle.Background
-		$fg = $PSStyle.Foreground
-
 		# Time
 		if ($p.HasTime) {
 			$s += "$($fg.BrightBlack)$([datetime]::Now.ToString('hh:mm:sst').ToLower())$($PSStyle.Reset) "
 		}
 
-		$hasTag = $false
+		$hasTags = $false
 
-		# Elevated session warning
+		function tagString {
+			[CmdletBinding()]
+			param (
+				[Parameter(Mandatory)]
+				[ValidateSet(
+					'Black', 'BrightBlack', 'White', 'BrightWhite', 'Red', 'BrightRed', 'Magenta',
+					'BrightMagenta', 'Blue', 'BrightBlue', 'Cyan', 'BrightCyan', 'Green', 'BrightGreen',
+					'Yellow', 'BrightYellow'
+				)]
+				[string] $Color,
+
+				[Parameter(Mandatory)]
+				[string] $Text
+			)
+
+			"$($fg.$Color)▐$($bg.$Color)$($fg.Black)$Text$($fg.$Color)$($bg.Black)▌$($PSStyle.Reset)"
+		}
+
+		# Elevated session tag
 		# https://superuser.com/a/756696
 		if (
 			$p.HasElevationTag `
@@ -154,8 +170,8 @@ function Install-DotfilesPrompt {
 				[System.Security.Principal.WindowsBuiltInRole]::Administrator
 			)
 		) {
-			$s += "$($bg.BrightRed)$($fg.BrightWhite) Admin $($PSStyle.Reset)"
-			$hasTag = $true
+			$s += tagString -Color 'BrightRed' -Text 'Admin'
+			$hasTags = $true
 		}
 
 		# Env tags
@@ -184,14 +200,14 @@ function Install-DotfilesPrompt {
 					($seg.Default -and ($value -ne $seg.Default)) `
 					-or ((-not $seg.Default) -and $value)
 				) {
-					$s += "$($bg.BrightYellow)$($fg.Black) $($seg.Label):$(if ($value) { $value } else { '?' }) $($PSStyle.Reset)"
-					$hasTag = $true
+					$s += tagString -Color 'BrightYellow' -Text "$($seg.Label):$(if ($value) { $value } else { '?' })"
+					$hasTags = $true
 				}
 			}
 		}
 
 		# Label, defaulting to "PS".
-		$s += "$(if ($hasTag) { ' '})$(${global:Dotfiles.Prompt.Label} ?? 'PS')$(if ($p.HasCurrentDir) { ' ' })"
+		$s += "$(if ($hasTags) { ' '})$(${global:Dotfiles.Prompt.Label} ?? 'PS')$(if ($p.HasCurrentDir) { ' ' })"
 
 		# Current directory, with home dir abbreviated as ~.
 		if ($p.HasCurrentDir) {
