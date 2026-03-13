@@ -22,14 +22,14 @@ ${script:Dotfiles.Prompt.Presets} = @{
 		HasElevationWarning = $true
 		HasDotnetEnvironment = $true
 		HasCurrentDir = $true
-		HomeDir = $Env:USERPROFILE
+		HomeDir = $null
 	}
 	Minimal = [DotfilesPrompt]@{
 		HasTime = $false
 		HasElevationWarning = $true
 		HasDotnetEnvironment = $true
 		HasCurrentDir = $false
-		HomeDir = $Env:USERPROFILE
+		HomeDir = $null
 	}
 }
 
@@ -122,12 +122,13 @@ function Install-DotfilesPrompt {
 	Set-DotfilesPrompt -Preset 'Default'
 
 	Set-Content -Path 'Function:\prompt' -Value {
-		# Print escape code to set terminal working directory of the current shell, which will be
-		# used when a new pane/tab is made.
+		$s = ''
+
+		# OSC 9;9 sequence to tell the terminal about the current working directory.
 		# https://learn.microsoft.com/windows/terminal/tutorials/new-tab-same-directory
 		$loc = $ExecutionContext.SessionState.Path.CurrentLocation
 		if ($loc.Provider.Name -eq 'FileSystem') {
-			Write-Host "$([char]27)]9;9;`"$($loc.ProviderPath)`"$([char]27)\" -NoNewline
+			$s += "$([char]27)]9;9;`"$($loc.ProviderPath)`"$([char]27)\"
 		}
 
 		$p = Get-DotfilesPrompt
@@ -135,14 +136,14 @@ function Install-DotfilesPrompt {
 		$bg = $PSStyle.Background
 		$fg = $PSStyle.Foreground
 
-		# Write time
+		# Time
 		if ($p.HasTime) {
-			Write-Host "$($fg.BrightBlack)$([datetime]::Now.ToString('hh:mm:sst').ToLower())$($PSStyle.Reset) " -NoNewline
+			$s += "$($fg.BrightBlack)$([datetime]::Now.ToString('hh:mm:sst').ToLower())$($PSStyle.Reset) "
 		}
 
 		$hasTag = $false
 
-		# Warn if elevated session
+		# Elevated session warning
 		# https://superuser.com/a/756696
 		if (
 			$p.HasElevationWarning `
@@ -153,44 +154,41 @@ function Install-DotfilesPrompt {
 				[System.Security.Principal.WindowsBuiltInRole]::Administrator
 			)
 		) {
-			Write-Host "$($bg.BrightRed)$($fg.BrightWhite) Admin $($PSStyle.Reset)" -NoNewline
+			$s += "$($bg.BrightRed)$($fg.BrightWhite) Admin $($PSStyle.Reset)"
 			$hasTag = $true
 		}
 
-		# Write non-dev .NET environment
+		# Non-dev .NET environment
 		if (
 			$p.HasDotnetEnvironment `
 			-and ($null -ne $Env:DOTNET_ENVIRONMENT) `
 			-and ('Development' -ne $Env:DOTNET_ENVIRONMENT)
 		) {
-			Write-Host "$($bg.BrightYellow)$($fg.Black) .NET: $Env:DOTNET_ENVIRONMENT $($PSStyle.Reset)" -NoNewline
+			$s += "$($bg.BrightYellow)$($fg.Black) .NET: $Env:DOTNET_ENVIRONMENT $($PSStyle.Reset)"
 			$hasTag = $true
 		}
 
-		# Write label
-		Write-Host "$(if ($hasTag) { ' '})$(${global:Dotfiles.Prompt.Label} ?? 'PS')$(if ($p.HasCurrentDir) { ' ' })" -NoNewline
+		# Label, defaulting to "PS".
+		$s += "$(if ($hasTag) { ' '})$(${global:Dotfiles.Prompt.Label} ?? 'PS')$(if ($p.HasCurrentDir) { ' ' })"
 
-		# Write current directory
+		# Current directory, with home dir abbreviated as ~.
 		if ($p.HasCurrentDir) {
 			$cwd = "$($ExecutionContext.SessionState.Path.CurrentLocation)"
 
-			# Replace home directory with ~
-			if ($p.HomeDir) {
-				$h = $p.HomeDir
-				if (($h -eq $cwd) -or $cwd.ToLower().StartsWith("$h\".ToLower())) {
-					$cwd = "~$($cwd.Substring($h.Length))"
-				}
+			$h = if ($p.HomeDir) { $p.HomeDir } else { $HOME }
+			if (
+				($h -eq $cwd) `
+				-or $cwd.ToLower().StartsWith("$h\".ToLower()) `
+				-or $cwd.ToLower().StartsWith("$h/".ToLower())
+			) {
+				$cwd = "~$($cwd.Substring($h.Length))"
 			}
 
-			Write-Host $cwd -NoNewline
+			$s += $cwd
 		}
 
-		# Write `>`s
-		Write-Host "$('>' * ($NestedPromptLevel + 1))" -NoNewline
-
-		# Return a truthy object (which is also printed out!) so that PowerShell knows that the
-		# prompt has been printed and won't print its own default prompt.
-		' '
+		# Everything above + ">"s according to the nested prompt level.
+		"$s$('>' * ($NestedPromptLevel + 1)) "
 	}
 }
 
