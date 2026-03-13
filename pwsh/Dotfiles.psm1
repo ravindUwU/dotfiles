@@ -9,9 +9,6 @@ ${script:exportedFunctions} ??= @()
 <#
 .SYNOPSIS
 	Registers a function name to be exported by the Dotfiles module.
-
-	Conditionally invoke as,
-		& ((Get-Command 'Export-DotfilesFunction' -ErrorAction Ignore) ?? {}) '<name>'
 #>
 function Export-DotfilesFunction {
 	param ([string] $name)

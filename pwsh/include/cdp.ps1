@@ -54,4 +54,4 @@ function cdp {
 	}
 }
 
-& ((Get-Command 'Export-DotfilesFunction' -ErrorAction Ignore) ?? {}) 'cdp'
+Export-DotfilesFunction 'cdp'

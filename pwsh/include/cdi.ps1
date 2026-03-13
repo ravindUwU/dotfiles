@@ -16,4 +16,4 @@ function cdi {
 	}
 }
 
-& ((Get-Command 'Export-DotfilesFunction' -ErrorAction Ignore) ?? {}) 'cdi'
+Export-DotfilesFunction 'cdi'

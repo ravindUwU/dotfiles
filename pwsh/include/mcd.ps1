@@ -15,4 +15,4 @@ function mcd {
 	cd $Name
 }
 
-& ((Get-Command 'Export-DotfilesFunction' -ErrorAction Ignore) ?? {}) 'mcd'
+Export-DotfilesFunction 'mcd'

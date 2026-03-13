@@ -8,4 +8,4 @@ function wtrt {
 	exit
 }
 
-& ((Get-Command 'Export-DotfilesFunction' -ErrorAction Ignore) ?? {}) 'wtrt'
+Export-DotfilesFunction 'wtrt'

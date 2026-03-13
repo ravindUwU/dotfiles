@@ -29,4 +29,4 @@ function New-Shortcut {
 	Get-Item $Path
 }
 
-& ((Get-Command 'Export-DotfilesFunction' -ErrorAction Ignore) ?? {}) 'New-Shortcut'
+Export-DotfilesFunction 'New-Shortcut'

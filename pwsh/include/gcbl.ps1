@@ -6,4 +6,4 @@ function gcbl {
 	(Get-Clipboard).Length
 }
 
-& ((Get-Command 'Export-DotfilesFunction' -ErrorAction Ignore) ?? {}) 'gcbl'
+Export-DotfilesFunction 'gcbl'

@@ -14,5 +14,5 @@ function pspsps {
 '@
 }
 
-& ((Get-Command 'Export-DotfilesFunction' -ErrorAction Ignore) ?? {}) 'pspsps'
+Export-DotfilesFunction 'pspsps'
 
