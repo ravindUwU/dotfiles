@@ -17,12 +17,15 @@ function Install-DotfilesAutoCd {
 				-or $e.CommandName.StartsWith("..$([System.IO.Path]::AltDirectorySeparatorChar)")
 			) `
 			-and (
-				# Container directory exists
+				# Container exists
 				Test-Path -PathType Container $e.CommandName
 			)
 		) {
 			$e.CommandScriptBlock = { cd $e.CommandName }.GetNewClosure()
 			$e.StopSearch = $true
+		}
+		else {
+			(${global:DotFiles.AutoCd.Old})?.Invoke($s, $e)
 		}
 	}
 }
