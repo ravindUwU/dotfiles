@@ -2,7 +2,7 @@ function Install-DotfilesAutoCd {
 	[CmdletBinding()]
 	param ()
 
-	${global:DotFiles.AutoCd.Old} = $ExecutionContext.SessionState.InvokeCommand.CommandNotFoundAction
+	${global:Dotfiles.AutoCd.Old} = $ExecutionContext.SessionState.InvokeCommand.CommandNotFoundAction
 
 	# https://github.com/PowerShell/PowerShell/blob/a51e7be624ab6dbde17f1d35ef470b69b8ebc2db/src/System.Management.Automation/engine/MshCmdlet.cs#L340-L347
 	$ExecutionContext.SessionState.InvokeCommand.CommandNotFoundAction = {
@@ -25,7 +25,7 @@ function Install-DotfilesAutoCd {
 			$e.StopSearch = $true
 		}
 		else {
-			(${global:DotFiles.AutoCd.Old})?.Invoke($s, $e)
+			(${global:Dotfiles.AutoCd.Old})?.Invoke($s, $e)
 		}
 	}
 }
@@ -34,8 +34,8 @@ function Uninstall-DotfilesAutoCd {
 	[CmdletBinding()]
 	param ()
 
-	if (${global:DotFiles.AutoCd.Old}) {
-		$ExecutionContext.SessionState.InvokeCommand.CommandNotFoundAction = ${global:DotFiles.AutoCd.Old}
-		Remove-Variable -Name 'DotFiles.AutoCd.Old' -Scope 'Global'
+	if (${global:Dotfiles.AutoCd.Old}) {
+		$ExecutionContext.SessionState.InvokeCommand.CommandNotFoundAction = ${global:Dotfiles.AutoCd.Old}
+		Remove-Variable -Name 'Dotfiles.AutoCd.Old' -Scope 'Global'
 	}
 }
