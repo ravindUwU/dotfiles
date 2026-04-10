@@ -19,6 +19,7 @@ try {
 		Import-Module './Dotfiles.psm1' -ArgumentList @{
 			'UsePrompt' = $true
 			'UseAutoCd' = $true
+			'UseUtf8' = $true
 		}
 
 		# Exit immediately, if the module didn't load
