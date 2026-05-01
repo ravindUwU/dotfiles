@@ -5,8 +5,9 @@
 function Reset-Path {
 	# https://stackoverflow.com/a/31845512
 
-	$Env:Path = [System.Environment]::GetEnvironmentVariable('PATH', 'Machine') + ';' `
-		+ [System.Environment]::GetEnvironmentVariable('PATH', 'User')
+	$env:PATH = `
+		[System.Environment]::GetEnvironmentVariable('PATH', [System.EnvironmentVariableTarget]::User) `
+		+ ';' + [System.Environment]::GetEnvironmentVariable('PATH', [System.EnvironmentVariableTarget]::Machine)
 }
 
 Export-DotfilesFunction 'Reset-Path'
