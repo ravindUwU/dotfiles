@@ -1,19 +1,24 @@
 <#
 .SYNOPSIS
-	Lists directories in the current location and `cd`s into the selection.
+	Interactive `cd`s into directories.
 #>
 function cdi {
 	param (
 		[string] $dir = '.'
 	)
 
-	cd $dir
+	while ($true) {
+		$selection = ('.', @(Get-ChildItem $dir -Directory | ForEach-Object { $_.Name })) `
+			| fzf --height '~30%'
 
-	$selection = Get-ChildItem -Directory | ForEach-Object { $_.Name } | fzf --height '30%' --layout reverse
-
-	if (-not ($null -eq $selection)) {
-		cd $selection
+		if ($selection -eq '.') {
+			break
+		} else {
+			$dir = Join-Path $dir $selection
+		}
 	}
+
+	cd $dir
 }
 
 Export-DotfilesFunction 'cdi'
