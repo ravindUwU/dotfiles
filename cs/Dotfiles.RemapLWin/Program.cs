@@ -1,7 +1,7 @@
 namespace Dotfiles.RemapLWin;
 
 using SharpHook;
-using SharpHook.Native;
+using SharpHook.Data;
 using System.Diagnostics;
 using System.Linq;
 
