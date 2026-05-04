@@ -8,4 +8,4 @@ function xv {
 	x $path
 }
 
-Export-DotfilesFunction 'xv'
+& ((Get-Command 'Export-DotfilesFunction' -ErrorAction Ignore) ?? {}) 'xv'

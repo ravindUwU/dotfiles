@@ -8,4 +8,4 @@ function cdv {
 	cd $path
 }
 
-Export-DotfilesFunction 'cdv'
+& ((Get-Command 'Export-DotfilesFunction' -ErrorAction Ignore) ?? {}) 'cdv'

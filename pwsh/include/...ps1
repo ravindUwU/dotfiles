@@ -18,4 +18,4 @@ function .. {
 	cd (@('..') * $n -join '/')
 }
 
-Export-DotfilesFunction '..'
+& ((Get-Command 'Export-DotfilesFunction' -ErrorAction Ignore) ?? {}) '..'

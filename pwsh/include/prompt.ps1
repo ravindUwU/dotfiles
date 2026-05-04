@@ -237,4 +237,4 @@ function Uninstall-DotfilesPrompt {
 	}
 }
 
-Export-DotfilesFunction 'Set-DotfilesPrompt'
+& ((Get-Command 'Export-DotfilesFunction' -ErrorAction Ignore) ?? {}) 'Set-DotfilesPrompt'

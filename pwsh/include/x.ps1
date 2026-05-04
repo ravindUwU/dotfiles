@@ -34,4 +34,4 @@ function x {
 	}
 }
 
-Export-DotfilesFunction 'x'
+& ((Get-Command 'Export-DotfilesFunction' -ErrorAction Ignore) ?? {}) 'x'

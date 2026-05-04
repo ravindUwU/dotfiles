@@ -11,6 +11,10 @@ ${script:exportedFunctions} ??= @()
 <#
 .SYNOPSIS
 	Registers a function name to be exported by the Dotfiles module.
+
+.DESCRIPTION
+	Conditionally invoke to allow dot-sourcing the same files to use their scripts directly.
+		& ((Get-Command 'Export-DotfilesFunction' -ErrorAction Ignore) ?? {}) 'name'
 #>
 function Export-DotfilesFunction {
 	param ([string] $name)

@@ -21,4 +21,4 @@ function cdi {
 	cd $dir
 }
 
-Export-DotfilesFunction 'cdi'
+& ((Get-Command 'Export-DotfilesFunction' -ErrorAction Ignore) ?? {}) 'cdi'

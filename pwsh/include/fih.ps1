@@ -2,4 +2,4 @@ function fih {
 	'><>'
 }
 
-Export-DotfilesFunction 'fih'
+& ((Get-Command 'Export-DotfilesFunction' -ErrorAction Ignore) ?? {}) 'fih'

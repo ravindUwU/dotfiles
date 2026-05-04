@@ -24,4 +24,4 @@ function flowers {
 	}
 }
 
-Export-DotfilesFunction 'flowers'
+& ((Get-Command 'Export-DotfilesFunction' -ErrorAction Ignore) ?? {}) 'flowers'

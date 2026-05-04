@@ -6,4 +6,4 @@ function hehe {
 	}
 }
 
-Export-DotfilesFunction 'hehe'
+& ((Get-Command 'Export-DotfilesFunction' -ErrorAction Ignore) ?? {}) 'hehe'

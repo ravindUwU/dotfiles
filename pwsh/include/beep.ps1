@@ -11,4 +11,4 @@ function beep {
 	[System.Console]::Beep($Frequency, $Duration)
 }
 
-Export-DotfilesFunction 'beep'
+& ((Get-Command 'Export-DotfilesFunction' -ErrorAction Ignore) ?? {}) 'beep'
