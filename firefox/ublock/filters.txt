@@ -37,6 +37,10 @@ stackoverflow.com,stackexchange.com,superuser.com##.s-navigation li:has-text('Ov
 stackoverflow.com,stackexchange.com,superuser.com###announcement-banner:has-text('OverflowAI')
 stackoverflow.com,stackexchange.com,superuser.com###sidebar .s-sidebarwidget--item:has-text(/OverflowAI|OpenAI|([^\w]AI[^\w\-])/)
 stackoverflow.com,stackexchange.com,superuser.com##.js-overflowai-cta
+stackoverflow.com## textarea[placeholder*="chat with AI"]:upward(2)
+stackoverflow.com## #content > div:has(svg.iconAnswerAI)
+stackoverflow.com## .js-inbox-notifications .inbox-item:has(.item-type:has-text(AI Assist))
+stackoverflow.com## ol.nav-links > li:has(> a[href*="agents.stackoverflow.com"])
 
 ! GitHub AI slop
 github.blog##.blog-header a:has-text('GitHub Copilot')
@@ -98,6 +102,9 @@ outlook.live.com## .fui-PopoverSurface .fui-Text:has-text(Copilot):upward(.fui-B
 to-do.live.com###O365_AppTile_Microsoft365Tile
 portal.azure.com##.fxs-topbar-copilot
 portal.azure.com## div[aria-label="Chat suggestions from Copilot"]:upward(1)
+onedrive.live.com## div[aria-label="Ask Copilot about your files"]
+onedrive.live.com## button[aria-label="Copilot actions"]
+onedrive.live.com## span:has-text(What can Copilot do):upward(.fui-FluentProvider)
 
 ! StackBlitz AI slop
 stackblitz.com##span[class^="OpenInBold"]:has-text(Open in bolt.new | AI):upward(button):upward(div)
