@@ -18,6 +18,7 @@ www.google.com##promo-middle-slot
 www.google.com##div[jscontroller] strong:has-text(AI Overview):upward([data-mcp])
 www.google.com##:matches-path(/^/$/) [role=dialog]
 www.google.com##button:has(span:has-text(AI Mode))
+www.google.com## [jscontroller][role="navigation"] a:has-text(AI Mode)
 
 ! MDN AI slop
 developer.mozilla.org##.menu-link.top-level-entry:has-text('AI Help')
@@ -31,6 +32,7 @@ stackoverflow.com##.js-freemium-cta
 stackoverflow.com##newsletter-ad
 stackoverflow.com###newsletter-ad
 stackoverflow.com###nav-askstack
+stackoverflow.com## aside[aria-label="Stack Overflow for Agents"]
 
 ! Stack Exchange AI slop
 stackoverflow.com,stackexchange.com,superuser.com##.s-navigation li:has-text('OverflowAI')
@@ -66,6 +68,9 @@ github.com##div[class^=prc-ActionMenu] li[class^=prc-ActionList-ActionListItem]:
 github.com##nav li[class^="prc-ActionList-ActionListItem"]:has(span:has-text(MCP))
 docs.github.com##div[class^="Popover"][aria-labelledby="ai-search-cta-heading"]
 docs.github.com##footer button:has-text(Ask Copilot):upward(section) div[class^="Box"]
+github.com## li[data-component="ActionList.Item"]:has-text(Open in GitHub Copilot app)
+github.com## .auth-form-body.Popover
+github.com## div[aria-modal="true"][class^="quick-search-overlay"] li[class*="ActionListItem"]:has(a[id*="copilot"])
 www.githubstatus.com## .component-container:has(.name:has-text(Copilot))
 
 ! VS Code AI slop advertisements
@@ -158,6 +163,22 @@ lobste.rs##.story:has(.tag_ai)
 ! Annoying banners UGH
 blog.angular.dev##h2:has-text(Sign up to discover human stories):upward(div[style="bottom: 0px;"])
 dev.to##.js-billboard-container
+
+! Reddit ai slop, and clutter
+www.reddit.com## #answers-suggested-queries
+www.reddit.com## faceplate-tracker[source="xpromo"]
+
+! Docker ai slop
+docs.docker.com## button[marlin-action="ask-gordon-button"]
+docs.docker.com## header button[aria-label^="Ask Gordon"]
+docs.docker.com## main nav li:has-text(AI and agents):upward(.navbar-group)
+docs.docker.com## main section:has(input[placeholder^="Ask anything about Docker and get instant answers"])
+
+! Misc web ai slop
+docs.avaloniaui.net## nav button[aria-label^="Ask AI"]
+
+! Redundant OpenSSL docs navbar links
+docs.openssl.org## li.md-nav__item > a[href="https://docs.openssl.org/master/man1/openssl-cmds"]:upward(li)
 
 ! Random other stuff I don't use / that shouldn't be there.
 www.strava.com##ul.user-nav a.btn:has-text(Give a Gift):upward(li)

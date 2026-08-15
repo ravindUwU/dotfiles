@@ -7,6 +7,14 @@
 #     - https://raw.githubusercontent.com/ravindUwU/dotfiles/main/firefox/ublacklist/filters.txt
 #     - https://raw.githubusercontent.com/laylavish/uBlockOrigin-HUGE-AI-Blocklist/main/list_uBlacklist.txt
 
+# Highlights
+@1*://*.microsoft.com/*
+@1*://*.brentozar.com/*
+@1*://*.mssqltips.com/*
+@1*://*.superuser.com/*
+@1*://*.stackexchange.com/*
+
+# Assorted blocks
 *://*.linkedin.com/*
 *://*.quora.com/*
 *://*.tutorialspoint.com/*
@@ -31,8 +39,36 @@
 *://*.medium.com/*
 *://*.htmx.org/*
 *://*.documentation.help/*
-
-# Twitter
+*://*.grokipedia.com/*
+*://*.dev.to/*
+*://*.geminicli.com/*
+*://*.9xdev.com/*
+*://*.zetcode.com/*
+*://*.copilot.microsoft.com/*
+*://*.csharptraining.co.uk/*
+*://*.w3teachers.com/*
+*://*.techieclues.com/*
+*://*.educba.com/*
+*://*.letshired.com/*
+*://*.dotnettutorials.net/*
+*://*.dotnetustad.com/*
+*://*.tutorialsrack.com/*
+*://*.thedeveloperblog.com/*
+*://*.net-tutorials.com/*
+*://*.tutlane.com/*
+*://*.secretgeek.net/*
+*://*.renenyffenegger.ch/*
+*://*.foxlearn.com/*
+*://*.completecsharptutorial.com/*
+*://*.google.com/*
+*://*.whattovisitwheretotravel.com/*
+*://*.gripfastistech.com/*
+*://*.ecosyste.ms/*
+*://*.shiptalkers.dev/*
+*://*.aitoolpick.org/*
+*://*.flyriver.com/*
+*://*.ai/*
+*://*.vercel.app/*
 *://*.twitter.com/*
 *://*.x.com/*
 
