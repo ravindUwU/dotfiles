@@ -32,6 +32,9 @@
 :*?:``deg::{U+0x00B0} ; °
 :*?:``kbd::<kbd></kbd>{Left 6}
 :*?:``details::<details><summary></summary></details>{Left 20}
+:*?:``code::<code></code>{Left 7}
+:*?:``img::<img src="">{Left 2}
+:*?:``td::<td></td>{Left 5}
 :*?:``tm::{U+0x2122} ; ™
 
 ; Superscript numbers
