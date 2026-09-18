@@ -60,7 +60,6 @@
 *://*.renenyffenegger.ch/*
 *://*.foxlearn.com/*
 *://*.completecsharptutorial.com/*
-*://*.google.com/*
 *://*.whattovisitwheretotravel.com/*
 *://*.gripfastistech.com/*
 *://*.ecosyste.ms/*
@@ -71,6 +70,8 @@
 *://*.vercel.app/*
 *://*.twitter.com/*
 *://*.x.com/*
+*://*.wisechecker.com/*
+*://*.ladybird.org/*
 
 # News corp, murdoch media and other shamelessly biased/conservative/generally shit news sites
 *://*.news.com.au/*

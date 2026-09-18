@@ -72,6 +72,9 @@ github.com## li[data-component="ActionList.Item"]:has-text(Open in GitHub Copilo
 github.com## .auth-form-body.Popover
 github.com## div[aria-modal="true"][class^="quick-search-overlay"] li[class*="ActionListItem"]:has(a[id*="copilot"])
 www.githubstatus.com## .component-container:has(.name:has-text(Copilot))
+github.com## button[data-testid="copilot-diff-explain-button"]
+github.com## button:has(svg.octicon-copilot)
+github.com## aside.feed-right-column div[class^="SidebarNudge"]:has-text(Copilot Day)
 
 ! VS Code AI slop advertisements
 code.visualstudio.com##.updates-banner:has(a[class^="copilot"])
@@ -128,6 +131,8 @@ angular.dev##.adev-banner:has-text(/(AI )|( AI)/)
 angular.dev##.docs-faceted-list-item:has(.docs-secondary-nav-header:has-text(Build with AI))
 angular.dev##.feature:has(h3:has-text(AI-))
 angular.dev##.docs-card:has-text( AI )
+angular.dev## a.explore-card[routerlink="/ai"]
+angular.dev## a.card[routerlink^="/ai/"]
 www.notion.com##dl:has(button[class^="toggleList_toggleButton__"][title="Expand Notion AI section"])
 
 eslint.org##nav ul li a[href="/docs/latest/use/mcp"]:upward(li)
@@ -159,6 +164,7 @@ bitwarden.com/password-generator###gm-5-star-user-ratings-validation
 ! Remove stories about & adjacent to AI (ugh) from lobste.rs <3.
 lobste.rs##.story:has(.tag_vibecoding)
 lobste.rs##.story:has(.tag_ai)
+lobste.rs## .story:has(a.domain[href="/domains/ladybird.org"])
 
 ! Annoying banners UGH
 blog.angular.dev##h2:has-text(Sign up to discover human stories):upward(div[style="bottom: 0px;"])
