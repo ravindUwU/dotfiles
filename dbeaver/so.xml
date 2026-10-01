@@ -1,5 +1,7 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?><templates><template autoinsert="true" context="sql" deleted="false" description="" enabled="true" name="so">SELECT @@SERVERNAME
-UNION ALL
-SELECT @@VERSION
-UNION ALL
-SELECT DB_NAME()</template></templates>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><templates><template autoinsert="true" context="sql" deleted="false" description="" enabled="true" name="so">SELECT
+	@@SERVERNAME AS server_name,
+	@@VERSION AS server_version,
+	SYSTEM_USER AS user_sys,
+	CURRENT_USER AS user_current,
+	DB_NAME() AS db,
+	'' AS _;</template></templates>
