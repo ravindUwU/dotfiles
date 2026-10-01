@@ -3,6 +3,7 @@ param (
 	#     [bool] UsePrompt
 	#     [bool] UseAutoCd
 	#     [bool] UseUtf8
+	#     [string] ContainerManager
 	[hashtable] $Options
 )
 
@@ -20,6 +21,8 @@ function Export-DotfilesFunction {
 	param ([string] $name)
 	${script:exportedFunctions} += $name
 }
+
+${global:Dotfiles.ContainerManager} = $Options.ContainerManager
 
 # Source includes
 foreach ($file in (Get-ChildItem "$PSScriptRoot/include/*.ps1" -ErrorAction Stop)) {
