@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>nop</Title>
+			<Shortcut>nop</Shortcut>
+		</Header>
+		<Snippet>
+			<Code Language="CSharp">; _ = 0;</Code>
+		</Snippet>
+	</CodeSnippet>
+
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>nopw</Title>
+			<Shortcut>nopw</Shortcut>
+		</Header>
+		<Snippet>
+			<Declarations>
+				<Literal Editable="false">
+					<ID>Task</ID>
+					<Function>SimpleTypeName(global::System.Threading.Tasks.Task)</Function>
+				</Literal>
+			</Declarations>
+			<Code Language="CSharp" Delimiter="~">; await ~Task~.Delay(1_000); _ = 0;</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>
