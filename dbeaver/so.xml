@@ -1,4 +1,6 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?><templates><template autoinsert="true" context="sql" deleted="false" description="" enabled="true" name="so">SELECT
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><templates><template autoinsert="true" context="sql" deleted="false" description="" enabled="true" name="so">SELECT 1;
+
+SELECT
 	@@SERVERNAME AS server_name,
 	@@VERSION AS server_version,
 	SYSTEM_USER AS user_sys,
