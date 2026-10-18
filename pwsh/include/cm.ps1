@@ -91,6 +91,35 @@ if ($cm = "${global:Dotfiles.ContainerManager}".Trim()) {
 
 	<#
 	.SYNOPSIS
+		Invokes the `volume` command of the container manager.
+	#>
+	function cmv {
+		param (
+			# Interactively select a volume name.
+			[switch] $Select,
+
+			# Prevents the underlying command from being printed before invocation.
+			[switch] $Raw
+		)
+
+		if ($Select) {
+			& $cm volume list --format json `
+				| ConvertFrom-Json `
+				| ForEach-Object { $_.Name } `
+				| fzf --height '30%'
+		}
+		else {
+			if (-not $Raw) {
+				Write-Host "# $cm volume $args"
+			}
+			& $cm volume @args
+		}
+	}
+
+	& ((Get-Command 'Export-DotfilesFunction' -ErrorAction Ignore) ?? {}) 'cmv'
+
+	<#
+	.SYNOPSIS
 		Invokes the `compose` command of the container manager.
 	#>
 	function cmco {
