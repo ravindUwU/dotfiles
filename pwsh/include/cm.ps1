@@ -127,12 +127,19 @@ if ($cm = "${global:Dotfiles.ContainerManager}".Trim()) {
 			# Adds `--force-recreate --always-recreate-deps` to the invocation.
 			[switch] $Recreate,
 
+			# Adds `--dry-run` to the invocation.
+			[switch] $WhatIf,
+
 			# Prevents the underlying command from being printed before invocation.
 			[switch] $Raw
 		)
 
 		if ($Recreate) {
 			$args = $args + '--force-recreate', '--always-recreate-deps'
+		}
+
+		if ($WhatIf) {
+			$args = $args + '--dry-run'
 		}
 
 		if (-not $Raw) {
