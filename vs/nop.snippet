@@ -6,7 +6,7 @@
 			<Shortcut>nop</Shortcut>
 		</Header>
 		<Snippet>
-			<Code Language="CSharp">; _ = 0;</Code>
+			<Code Language="CSharp">; /* nop */ _ = 0;</Code>
 		</Snippet>
 	</CodeSnippet>
 
@@ -22,7 +22,7 @@
 					<Function>SimpleTypeName(global::System.Threading.Tasks.Task)</Function>
 				</Literal>
 			</Declarations>
-			<Code Language="CSharp" Delimiter="~">; await ~Task~.Delay(1_000); _ = 0;</Code>
+			<Code Language="CSharp" Delimiter="~">; await ~Task~.Delay(1_000); /* nop */ _ = 0;</Code>
 		</Snippet>
 	</CodeSnippet>
 </CodeSnippets>
