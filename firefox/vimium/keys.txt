@@ -28,8 +28,6 @@ map K scrollPageUp
 # Go ...
 map gt scrollToTop
 map gb scrollToBottom
-map gn goNext
-map gp goPrevious
 
 # Horizontal navigation
 map h scrollLeft
@@ -40,3 +38,8 @@ map L scrollToRight
 # Marks
 map ~ Marks.activateCreateMode
 map ` Marks.activateGotoMode
+
+# Find
+map F enterFindMode
+map n performFind
+map N performBackwardsFind
