@@ -1,0 +1,45 @@
+[
+  {
+    "version" : 2
+  },
+  {
+    "action" : {
+      "script" : "git submodule update --init --recursive",
+      "showOutput" : false,
+      "type" : "sh",
+      "waitForExit" : true
+    },
+    "name" : "1.0 - Init Submodules",
+    "target" : "repository"
+  },
+  {
+    "action" : {
+      "script" : "git commit --amend --no-edit",
+      "showOutput" : false,
+      "type" : "sh",
+      "waitForExit" : true
+    },
+    "name" : "2.1 - Commit Amend with Staged",
+    "target" : "repository"
+  },
+  {
+    "action" : {
+      "script" : "git commit -m 'WIP'",
+      "showOutput" : false,
+      "type" : "sh",
+      "waitForExit" : true
+    },
+    "name" : "2.2 - Commit WIP",
+    "target" : "repository"
+  },
+  {
+    "action" : {
+      "script" : "git add -A ; git commit -m 'WIP'",
+      "showOutput" : false,
+      "type" : "sh",
+      "waitForExit" : true
+    },
+    "name" : "2.3 - Commit WIP with Add",
+    "target" : "repository"
+  }
+]
